@@ -1,64 +1,80 @@
+"use client";
+
+import { useEffect, useState } from "react";
 import Link from "next/link";
 
 export default function Navbar() {
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [activeLang, setActiveLang] = useState("es");
+
+  useEffect(() => {
+    const handleScroll = () => {
+      // Swaps theme (logo & text to black) exactly when the hero section (100vh) exits the viewport
+      setIsScrolled(window.scrollY >= window.innerHeight - 80);
+    };
+    window.addEventListener("scroll", handleScroll);
+    handleScroll();
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 px-4 py-4 md:px-6 md:py-5 transition-all duration-300">
-      <div className="w-full flex items-center justify-between">
+    <header 
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-transparent ${
+        isScrolled 
+          ? "pt-0.5 pb-2" 
+          : "pt-1 pb-3 md:pt-2 md:pb-4"
+      }`}
+    >
+      <div className="max-w-[1600px] mx-auto px-6 md:px-10 lg:px-12 flex items-center justify-between">
         {/* Logo */}
-        <Link href="/" className="text-3xl font-serif tracking-[0.15em] text-white">
-          VILMA
+        <Link href="/" className="relative block w-[80px] md:w-[110px] aspect-square transition-opacity duration-300 hover:opacity-80">
+          <img
+            src="/logo/logo-blanco.png"
+            alt="Logo Blanco"
+            className={`absolute inset-0 w-full h-full object-contain transition-all duration-500 ease-in-out ${
+              isScrolled ? "opacity-0 scale-90 pointer-events-none" : "opacity-100 scale-100"
+            }`}
+          />
+          <img
+            src="/logo/logo-negro.png"
+            alt="Logo Negro"
+            className={`absolute inset-0 w-full h-full object-contain transition-all duration-500 ease-in-out ${
+              isScrolled ? "opacity-100 scale-100" : "opacity-0 scale-90 pointer-events-none"
+            }`}
+          />
         </Link>
 
-        {/* Desktop Navigation */}
-        <nav className="hidden lg:flex items-center gap-2">
-          <Link
-            href="#"
-            className="px-3 py-[6px] text-[14px] font-medium tracking-[0.2px] text-white uppercase border-2 border-white rounded-full hover:bg-white hover:text-black transition-colors"
+        {/* Language selector */}
+        <div 
+          className={`flex items-center gap-5 md:gap-8 transition-all duration-300 ${
+            isScrolled 
+              ? "opacity-0 pointer-events-none translate-x-4" 
+              : "opacity-100 translate-x-0"
+          }`}
+        >
+          <button
+            onClick={() => setActiveLang("es")}
+            className={`text-[14px] tracking-wide transition-colors duration-200 cursor-pointer ${
+              activeLang === "es"
+                ? "text-white font-semibold"
+                : "text-white/60 hover:text-white/90"
+            }`}
           >
-            Recursos Gratuitos
-          </Link>
-          <Link
-            href="#"
-            className="px-3 py-[6px] text-[14px] font-medium tracking-[0.2px] text-white uppercase border-2 border-white rounded-full hover:bg-white hover:text-black transition-colors"
-          >
-            Libro
-          </Link>
-          <Link
-            href="#"
-            className="px-3 py-[6px] text-[14px] font-medium tracking-[0.2px] text-white uppercase border-2 border-white rounded-full hover:bg-white hover:text-black transition-colors"
-          >
-            Entrenamientos Gratuitos
-          </Link>
-
-          {/* Search Icon */}
-          <button className="flex items-center justify-center w-[38px] h-[38px] ml-2 text-black bg-white rounded-full hover:scale-105 transition-transform">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="w-[16px] h-[16px]"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              strokeWidth={2.5}
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-              />
-            </svg>
+            Español
           </button>
-
-          {/* Menu Button */}
-          <button className="flex items-center justify-center w-[38px] h-[38px] ml-1 text-[9px] font-bold tracking-widest text-black uppercase bg-white rounded-full hover:scale-105 transition-transform">
-            Menu
+          <button
+            onClick={() => setActiveLang("en")}
+            className={`text-[14px] tracking-wide transition-colors duration-200 cursor-pointer ${
+              activeLang === "en"
+                ? "text-white font-semibold"
+                : "text-white/60 hover:text-white/90"
+            }`}
+          >
+            Inglés
           </button>
-        </nav>
-
-        {/* Mobile Menu Toggle */}
-        <button className="lg:hidden flex items-center justify-center w-[38px] h-[38px] text-[9px] font-bold tracking-widest text-black uppercase bg-white rounded-full">
-          Menu
-        </button>
+        </div>
       </div>
     </header>
   );
 }
+
