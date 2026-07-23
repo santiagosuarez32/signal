@@ -73,6 +73,11 @@ html.lenis, html.lenis body {
   100% { transform: translateX(-50%); }
 }
 
+@keyframes marquee-vertical {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-50%); }
+}
+
 /* Presentation Step 3 styles from trapassocaisso.com */
 .presentation-step3-section {
   position: relative;

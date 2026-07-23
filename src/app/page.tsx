@@ -6,6 +6,8 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import ServicesCards from "@/components/ServicesCards";
 import PlansTable from "@/components/PlansTable";
+import Testimonials from "@/components/Testimonials";
+import CtaSection from "@/components/CtaSection";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -90,7 +92,7 @@ export default function Home() {
           ref={heroRef}
           className="relative w-full flex flex-col justify-center min-h-screen overflow-hidden origin-top"
         >
-          {/* Background Video */}
+          {/* Background */}
           <div className="fixed inset-0 w-full h-screen z-0 pointer-events-none overflow-hidden bg-black">
             <video 
               src="https://pub-7dcc71e466f849e5959259c33a6847ec.r2.dev/7706630-uhd_4096_2160_25fps.mp4" 
@@ -282,14 +284,16 @@ export default function Home() {
       <ServicesCards />
       <PlansTable />
 
+      <Testimonials />
+
       {/* Instagram Feed Section */}
       <section className="relative z-10 w-full py-12">
         <Script src="https://elfsightcdn.com/platform.js" strategy="lazyOnload" />
         <div className="elfsight-app-38ccda90-6f49-45d9-a689-3b90377b8a85" data-elfsight-app-lazy></div>
       </section>
 
-      {/* Spacer to demonstrate scroll */}
-      <div className="h-[20vh]" />
+      <CtaSection />
+
       </div>
     </main>
   );

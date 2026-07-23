@@ -5,22 +5,33 @@ import Link from "next/link";
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isAtFooter, setIsAtFooter] = useState(false);
   const [activeLang, setActiveLang] = useState("es");
 
   useEffect(() => {
     const handleScroll = () => {
+      const scrollY = window.scrollY;
+      const windowHeight = window.innerHeight;
+      const docHeight = document.documentElement.scrollHeight;
+      
       // Swaps theme (logo & text to black) exactly when the hero section (100vh) exits the viewport
-      setIsScrolled(window.scrollY >= window.innerHeight - 80);
+      setIsScrolled(scrollY >= windowHeight - 80);
+      
+      // Swaps back to white when entering the footer (which is 100vh tall)
+      setIsAtFooter(scrollY >= docHeight - windowHeight - 80);
     };
     window.addEventListener("scroll", handleScroll);
     handleScroll();
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+  
+  const showWhiteLogo = !isScrolled || isAtFooter;
+  const showBlackLogo = isScrolled && !isAtFooter;
 
   return (
     <header 
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-transparent ${
-        isScrolled 
+        isScrolled && !isAtFooter
           ? "pt-0.5 pb-2" 
           : "pt-1 pb-3 md:pt-2 md:pb-4"
       }`}
@@ -32,14 +43,14 @@ export default function Navbar() {
             src="/logo/logo-blanco.png"
             alt="Logo Blanco"
             className={`absolute inset-0 w-full h-full object-contain transition-all duration-500 ease-in-out ${
-              isScrolled ? "opacity-0 scale-90 pointer-events-none" : "opacity-100 scale-100"
+              !showWhiteLogo ? "opacity-0 scale-90 pointer-events-none" : "opacity-100 scale-100"
             }`}
           />
           <img
             src="/logo/logo-negro.png"
             alt="Logo Negro"
             className={`absolute inset-0 w-full h-full object-contain transition-all duration-500 ease-in-out ${
-              isScrolled ? "opacity-100 scale-100" : "opacity-0 scale-90 pointer-events-none"
+              showBlackLogo ? "opacity-100 scale-100" : "opacity-0 scale-90 pointer-events-none"
             }`}
           />
         </Link>
@@ -47,7 +58,7 @@ export default function Navbar() {
         {/* Language selector */}
         <div 
           className={`flex items-center gap-5 md:gap-8 transition-all duration-300 ${
-            isScrolled 
+            !showWhiteLogo
               ? "opacity-0 pointer-events-none translate-x-4" 
               : "opacity-100 translate-x-0"
           }`}
