@@ -2,11 +2,11 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import { useTranslation } from "@/components/TranslationProvider";
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
-  const [isAtFooter, setIsAtFooter] = useState(false);
-  const [activeLang, setActiveLang] = useState("es");
+  const { lang, dict } = useTranslation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -16,22 +16,19 @@ export default function Navbar() {
       
       // Swaps theme (logo & text to black) exactly when the hero section (100vh) exits the viewport
       setIsScrolled(scrollY >= windowHeight - 80);
-      
-      // Swaps back to white when entering the footer (which is 100vh tall)
-      setIsAtFooter(scrollY >= docHeight - windowHeight - 80);
     };
     window.addEventListener("scroll", handleScroll);
     handleScroll();
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
   
-  const showWhiteLogo = !isScrolled || isAtFooter;
-  const showBlackLogo = isScrolled && !isAtFooter;
+  const showWhiteLogo = !isScrolled;
+  const showBlackLogo = isScrolled;
 
   return (
     <header 
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-transparent ${
-        isScrolled && !isAtFooter
+        isScrolled
           ? "pt-0.5 pb-2" 
           : "pt-1 pb-3 md:pt-2 md:pb-4"
       }`}
@@ -63,26 +60,26 @@ export default function Navbar() {
               : "opacity-100 translate-x-0"
           }`}
         >
-          <button
-            onClick={() => setActiveLang("es")}
+          <Link
+            href="/es"
             className={`text-[14px] tracking-wide transition-colors duration-200 cursor-pointer ${
-              activeLang === "es"
+              lang === "es"
                 ? "text-white font-semibold"
                 : "text-white/60 hover:text-white/90"
             }`}
           >
-            Español
-          </button>
-          <button
-            onClick={() => setActiveLang("en")}
+            {dict.nav.lang_es}
+          </Link>
+          <Link
+            href="/en"
             className={`text-[14px] tracking-wide transition-colors duration-200 cursor-pointer ${
-              activeLang === "en"
+              lang === "en"
                 ? "text-white font-semibold"
                 : "text-white/60 hover:text-white/90"
             }`}
           >
-            Inglés
-          </button>
+            {dict.nav.lang_en}
+          </Link>
         </div>
       </div>
     </header>

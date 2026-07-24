@@ -11,27 +11,27 @@ const testimonials = [
   {
     id: 1,
     image: "/marquee/1.png",
-    title: "EcoStore LATAM",
+    title: "Alma Beauty Spa",
     footer: `"Desde que rediseñamos la estrategia de e-commerce, nuestro volumen de ventas mensuales superó todas las expectativas. El enfoque en la conversión fue la pieza que nos faltaba para escalar."`,
-    bgColor: "bg-gradient-to-br from-cyan-100 to-sky-300",
-    textColor: "text-mystic-navy",
-    invertLogo: false,
+    bgColor: "bg-[#0a0a0a]",
+    textColor: "text-white",
+    invertLogo: true,
   },
   {
     id: 2,
     image: "/marquee/2.png",
-    title: "FitLife App",
+    title: "Caribeños",
     footer: `"Una optimización absoluta de nuestro funnel. No solo logramos atraer a miles de usuarios nuevos en un tiempo récord, sino que bajamos significativamente nuestro costo de adquisición."`,
-    bgColor: "bg-gradient-to-br from-sky-400 to-blue-600",
+    bgColor: "bg-[#0a0a0a]",
     textColor: "text-white",
     invertLogo: true,
   },
   {
     id: 3,
     image: "/marquee/3.png",
-    title: "SaaS Analytics",
+    title: "Ajisito",
     footer: `"Entendieron a la perfección nuestro modelo B2B. La calidad de los leads mejoró drásticamente y la nueva comunicación nos posicionó como líderes indiscutidos en nuestro sector."`,
-    bgColor: "bg-gradient-to-br from-blue-700 to-indigo-900",
+    bgColor: "bg-[#0a0a0a]",
     textColor: "text-white",
     invertLogo: true,
   }
@@ -90,23 +90,27 @@ export default function Testimonials() {
               ref={(el) => {
                 cardsRef.current[idx] = el;
               }}
-              className={`${card.bgColor} ${card.textColor} rounded-2xl p-8 lg:p-10 flex flex-col min-h-[360px] lg:min-h-[440px] h-full relative overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-xl`}
+              className={`${card.bgColor} ${card.textColor} rounded-2xl p-8 lg:p-10 flex flex-col min-h-[400px] lg:min-h-[500px] h-full relative overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-xl`}
             >
               <div className="flex flex-col h-full z-10 relative">
                 
-                {/* Header (Logo + Title) */}
-                <div className="flex flex-row items-start gap-4 -ml-2">
-                  <img src={card.image} alt={card.title} className={`h-16 xl:h-20 w-auto object-contain brightness-0 ${card.invertLogo ? 'invert' : ''}`} />
-                  <h3 className="pt-2 text-xl lg:text-2xl font-medium tracking-wide leading-tight text-left">
-                    {card.title}
-                  </h3>
+                {/* Header (Logo) */}
+                <div className="flex flex-row items-center gap-4 -ml-2 h-20 xl:h-24">
+                  <img src={card.image} alt={card.title} className={`max-h-full w-auto object-contain brightness-0 ${card.invertLogo ? 'invert' : ''}`} />
                 </div>
 
                 {/* Testimonial Quote */}
-                <div className="my-auto pt-6">
-                  <p className="text-sm md:text-base text-left italic font-light opacity-90 leading-snug">
+                <div className="pt-2 px-1 lg:px-2 flex flex-col flex-grow">
+                  <p className="text-sm md:text-base lg:text-lg text-left italic font-extralight opacity-90 leading-relaxed">
                     "{card.footer.replace(/^"|"$/g, '')}"
                   </p>
+                  
+                  {/* Business Name */}
+                  <div className="mt-auto pt-6">
+                    <p className="text-[11px] md:text-xs font-light tracking-wide leading-tight opacity-90">
+                      — {card.title}
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>

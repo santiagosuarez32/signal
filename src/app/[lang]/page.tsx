@@ -8,10 +8,12 @@ import ServicesCards from "@/components/ServicesCards";
 import PlansTable from "@/components/PlansTable";
 import Testimonials from "@/components/Testimonials";
 import CtaSection from "@/components/CtaSection";
-
+import FaqSection from "@/components/FaqSection";
+import { useTranslation } from "@/components/TranslationProvider";
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Home() {
+  const { dict } = useTranslation();
   const heroRef = useRef<HTMLDivElement>(null);
   const titleRef = useRef<HTMLHeadingElement>(null);
   const textRef = useRef<HTMLParagraphElement>(null);
@@ -109,22 +111,22 @@ export default function Home() {
           <div ref={textContainerRef} className="relative z-10 w-full max-w-[1400px] mx-auto flex flex-col items-start justify-center pt-32 pb-20 px-8 md:px-16 lg:px-24 h-[100vh]">
             <div className="max-w-4xl flex flex-col items-start text-left">
               <div ref={ctaRef} className="inline-block px-5 py-2 border border-white/40 rounded-[30px] text-white/90 text-[14px] font-light mb-6 backdrop-blur-sm">
-                Una agencia de publicidad
+                {dict.hero.badge}
               </div>
               
               <h1
                 ref={titleRef}
                 className="text-3xl md:text-5xl lg:text-[4.15rem] font-extralight text-white leading-[1.15] tracking-tight mb-6"
               >
-                Branding y contenidos <br className="hidden md:block" />
-                para nuevos medios.
+                {dict.hero.title1} <br className="hidden md:block" />
+                {dict.hero.title2}
               </h1>
 
               <p
                 ref={textRef}
                 className="max-w-[36rem] text-base md:text-lg text-white/80 font-extralight leading-relaxed"
               >
-                Resolvemos problemas de comunicación complejos con <br className="hidden md:block" />herramientas creativas y tecnológicas.
+                {dict.hero.subtitle1} <br className="hidden md:block" />{dict.hero.subtitle2}
               </p>
             </div>
           </div>
@@ -152,12 +154,12 @@ export default function Home() {
               color: "var(--color-mystic-navy)",
             }}
           >
-            Método y experiencia
+            {dict.experience.badge}
           </div>
 
           {/* Heading */}
           <h2 className="text-2xl md:text-3xl text-mystic-navy leading-tight font-light mb-7">
-            Nos enfocamos en <strong className="font-extrabold">audiencias diversas</strong> para enriquecer la conversación.
+            {dict.experience.heading_part1} <strong className="font-extrabold">{dict.experience.heading_bold}</strong> {dict.experience.heading_part2}
           </h2>
 
           {/* Subtext */}
@@ -171,7 +173,7 @@ export default function Home() {
               marginBottom: 60,
             }}
           >
-            Trabajamos junto a cada marca para alcanzar públicos específicos con producciones de alto valor emocional que generan acción.
+            {dict.experience.subtext}
           </p>
         </div>
 
@@ -251,28 +253,28 @@ export default function Home() {
             
             {/* Overlapping Heading */}
             <div className="mb-10 lg:absolute lg:top-10 lg:left-[-140px] z-10">
-              <p className="text-xl md:text-2xl text-turquesa font-semibold tracking-widest text-right pr-2">¡HEY!</p>
+              <p className="text-xl md:text-2xl text-turquesa font-semibold tracking-widest text-right pr-2">{dict.about.greeting}</p>
               <h2 className="text-5xl md:text-6xl lg:text-[5.5rem] font-thin text-mystic-navy tracking-tight leading-none whitespace-nowrap">
-                SOY DANNELYS.
+                {dict.about.title}
               </h2>
             </div>
 
             <div className="lg:mt-48 space-y-8 text-lg md:text-[1.1rem] text-mystic-navy/80 leading-relaxed font-light">
               <p className="text-2xl md:text-3xl text-mystic-navy leading-tight">
-                Divulgadora de <strong className="font-extrabold">liderazgo con inteligencia artificial, marketing y negocios.</strong> Y ahora, si me permites, <strong className="font-extrabold">tu nueva mentora..</strong>
+                {dict.about.p1_part1} <strong className="font-extrabold">{dict.about.p1_bold}</strong> {dict.about.p1_part2} <strong className="font-extrabold">{dict.about.p1_bold2}</strong>
               </p>
               
               <p>
-                Es probable que hayas escuchado de mi o hayas consumido alguno de mis contenidos. Cada año, <strong className="font-semibold text-mystic-navy">mi marketing genera entre 400 y 500 millones de impresiones.</strong> Pero sin importar cómo llegaste aquí, <strong className="font-semibold text-mystic-navy">gracias por estar.</strong>
+                {dict.about.p2_part1} <strong className="font-semibold text-mystic-navy">{dict.about.p2_bold}</strong> {dict.about.p2_part2} <strong className="font-semibold text-mystic-navy">{dict.about.p2_bold2}</strong>
               </p>
 
               <p>
-                Hoy más que nunca, en una era marcada por la inteligencia artificial, <strong className="font-semibold text-mystic-navy">se necesitan líderes como tú</strong> que combinan <strong className="font-semibold text-mystic-navy">humanidad con estrategia</strong>, e <strong className="font-semibold text-mystic-navy">IA con intención y propósito.</strong>
+                {dict.about.p3_part1} <strong className="font-semibold text-mystic-navy">{dict.about.p3_bold}</strong> {dict.about.p3_part2} <strong className="font-semibold text-mystic-navy">{dict.about.p3_bold2}</strong>{dict.about.p3_part3} <strong className="font-semibold text-mystic-navy">{dict.about.p3_bold3}</strong>
               </p>
               
               <div className="flex flex-col items-start gap-2 pt-2 font-bold text-white text-lg">
-                <span className="bg-turquesa px-3 py-1 inline-block">No sólo encontrarás el "qué"</span>
-                <span className="bg-mystic-navy px-3 py-1 inline-block">También aprenderás el "cómo"</span>
+                <span className="bg-turquesa px-3 py-1 inline-block">{dict.about.pill1}</span>
+                <span className="bg-mystic-navy px-3 py-1 inline-block">{dict.about.pill2}</span>
               </div>
             </div>
 
@@ -291,7 +293,7 @@ export default function Home() {
         <Script src="https://elfsightcdn.com/platform.js" strategy="lazyOnload" />
         <div className="elfsight-app-38ccda90-6f49-45d9-a689-3b90377b8a85" data-elfsight-app-lazy></div>
       </section>
-
+      <FaqSection />
       <CtaSection />
 
       </div>

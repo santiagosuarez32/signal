@@ -1,67 +1,48 @@
 import React from 'react';
-
-const cardsData = [
-  {
-    id: 1,
-    number: "1",
-    title: "Signal Silver",
-    subtext: "Para negocios que quieren comenzar a usar publicidad digital de forma estructurada.",
-    pills: [
-      "Análisis inicial del negocio",
-      "Diseño de la arquitectura de campañas",
-      "Configuración de plataformas publicitarias",
-      "Configuración del seguimiento",
-      "Producción de 3 creativos iniciales",
-      "Lanzamiento de campañas"
-    ],
-    footer: "Este plan construye la base de tu sistema de adquisición de clientes. Al finalizar podés gestionar las campañas internamente o escalar al siguiente nivel.",
-    bgColor: "bg-gradient-to-br from-slate-200 via-slate-300 to-slate-400",
-    numberColor: "text-white",
-    textColor: "text-mystic-navy",
-    pillColor: "bg-white text-mystic-navy"
-  },
-  {
-    id: 2,
-    number: "2",
-    title: "Signal Bronze",
-    subtext: "Para negocios que ya invierten en publicidad y quieren mejorar su rendimiento.",
-    pills: [
-      "Optimización continua de campañas",
-      "Análisis de métricas de rendimiento",
-      "Ajustes de presupuesto",
-      "Rotación de creativos",
-      "Mejoras en la estructura de campañas",
-      "Reportes de rendimiento periódicos"
-    ],
-    footer: "El objetivo es mejorar la eficiencia y estabilidad de tus campañas. Tomamos decisiones en base a datos reales para maximizar tu inversión.",
-    bgColor: "bg-gradient-to-br from-amber-500 via-[#cd7f32] to-amber-700",
-    numberColor: "text-white/30",
-    textColor: "text-white",
-    pillColor: "bg-white/20 text-white"
-  },
-  {
-    id: 3,
-    number: "3",
-    title: "Signal Gold",
-    subtext: "Para negocios que buscan crecimiento agresivo con enfoque de performance marketing.",
-    pills: [
-      "Análisis completo del embudo",
-      "Testing de campañas y creativos",
-      "Testing de nuevos públicos",
-      "Nuevos creativos mensuales",
-      "Expansión de audiencias",
-      "Optimización avanzada",
-      "Estrategia de escalado"
-    ],
-    footer: "El objetivo es convertir la publicidad en un canal escalable. La publicidad se convierte en el motor real de crecimiento de tu negocio.",
-    bgColor: "bg-gradient-to-br from-yellow-300 via-[#e8b923] to-yellow-600",
-    numberColor: "text-white/40",
-    textColor: "text-mystic-navy",
-    pillColor: "bg-white/60 text-mystic-navy"
-  }
-];
+import { useTranslation } from "@/components/TranslationProvider";
 
 export default function ServicesCards() {
+  const { dict } = useTranslation();
+  
+  const cardsData = [
+    {
+      id: 1,
+      number: "1",
+      title: dict.plans.signal_silver.title,
+      subtext: dict.plans.signal_silver.subtext,
+      pills: dict.plans.signal_silver.pills,
+      footer: dict.plans.signal_silver.footer,
+      bgColor: "bg-gradient-to-br from-slate-200 via-slate-300 to-slate-400",
+      numberColor: "text-white",
+      textColor: "text-mystic-navy",
+      pillColor: "bg-white text-mystic-navy"
+    },
+    {
+      id: 2,
+      number: "2",
+      title: dict.plans.signal_bronze.title,
+      subtext: dict.plans.signal_bronze.subtext,
+      pills: dict.plans.signal_bronze.pills,
+      footer: dict.plans.signal_bronze.footer,
+      bgColor: "bg-gradient-to-br from-amber-500 via-[#cd7f32] to-amber-700",
+      numberColor: "text-white/30",
+      textColor: "text-white",
+      pillColor: "bg-white/20 text-white"
+    },
+    {
+      id: 3,
+      number: "3",
+      title: dict.plans.signal_gold.title,
+      subtext: dict.plans.signal_gold.subtext,
+      pills: dict.plans.signal_gold.pills,
+      footer: dict.plans.signal_gold.footer,
+      bgColor: "bg-gradient-to-br from-yellow-300 via-[#e8b923] to-yellow-600",
+      numberColor: "text-white/40",
+      textColor: "text-mystic-navy",
+      pillColor: "bg-white/60 text-mystic-navy"
+    }
+  ];
+
   return (
     <section className="relative z-10 w-full py-24 bg-white text-mystic-navy">
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
@@ -69,7 +50,7 @@ export default function ServicesCards() {
         {/* Intro text */}
         <div className="max-w-4xl mb-16">
           <p className="text-2xl md:text-3xl text-mystic-navy leading-tight font-light">
-            Planes diseñados para cada etapa de tu crecimiento. Construimos <strong className="font-extrabold">sistemas de adquisición de clientes</strong> que escalan contigo.
+            {dict.services.intro_part1} <strong className="font-extrabold">{dict.services.intro_bold}</strong> {dict.services.intro_part2}
           </p>
         </div>
 
@@ -99,7 +80,7 @@ export default function ServicesCards() {
 
                 {/* Pills */}
                 <div className="flex flex-col gap-2 mb-8">
-                  {card.pills.map((pill, idx) => (
+                  {card.pills.map((pill: string, idx: number) => (
                     <div 
                       key={idx} 
                       className={`${card.pillColor} rounded-full px-4 py-1.5 text-xs font-semibold shadow-sm w-fit`}

@@ -1,0 +1,142 @@
+{
+  "metadata": {
+    "title": "Signal | Marketing and Advertising Agency",
+    "description": "Expert agency in digital marketing, online advertising, and positioning."
+  },
+  "nav": {
+    "lang_es": "Spanish",
+    "lang_en": "English"
+  },
+  "hero": {
+    "badge": "Digital Marketing & Advertising Agency",
+    "title1": "Marketing and Advertising",
+    "title2": "Agency for leading brands.",
+    "subtitle1": "We drive your business growth with",
+    "subtitle2": "digital marketing, advertising, and branding strategies."
+  },
+  "experience": {
+    "badge": "Method & Experience",
+    "heading_part1": "We focus on",
+    "heading_bold": "digital marketing strategies",
+    "heading_part2": "aimed at scaling your business.",
+    "subtext": "We design advertising campaigns, SEO positioning, and corporate branding to connect your brand with its ideal audience and increase your sales."
+  },
+  "about": {
+    "greeting": "HELLO!",
+    "title": "WE ARE SIGNAL.",
+    "p1_part1": "Specialists in",
+    "p1_bold": "digital marketing strategies, profitable advertising, and business growth.",
+    "p1_part2": "And now, if you'll allow us,",
+    "p1_bold2": "your strategic agency.",
+    "p2_part1": "You've probably already seen the results of our work. Every year,",
+    "p2_bold": "our digital marketing and online advertising campaigns generate a massive return on investment (ROI).",
+    "p2_part2": "But regardless of how you got here,",
+    "p2_bold2": "thank you for trusting us.",
+    "p3_part1": "Today more than ever, in such a competitive market,",
+    "p3_bold": "agencies are needed",
+    "p3_part2": "that combine",
+    "p3_bold2": "data analysis with web positioning strategies",
+    "p3_part3": ", and",
+    "p3_bold3": "creativity with performance.",
+    "pill1": "We don't just do advertising",
+    "pill2": "We scale your sales"
+  },
+  "services": {
+    "intro_part1": "Plans designed for every stage of your growth. We build",
+    "intro_bold": "customer acquisition systems",
+    "intro_part2": "that scale with you."
+  },
+  "plans": {
+    "signal_silver": {
+      "title": "Signal Silver",
+      "subtext": "For businesses that want to start using digital advertising in a structured way.",
+      "pills": [
+        "Initial business analysis",
+        "Campaign architecture design",
+        "Advertising platform setup",
+        "Tracking configuration",
+        "Production of 3 initial creatives",
+        "Campaign launch"
+      ],
+      "footer": "This plan builds the foundation of your customer acquisition system. Upon completion, you can manage campaigns internally or scale to the next level."
+    },
+    "signal_bronze": {
+      "title": "Signal Bronze",
+      "subtext": "For businesses already investing in advertising and want to improve their performance.",
+      "pills": [
+        "Continuous campaign optimization",
+        "Performance metrics analysis",
+        "Budget adjustments",
+        "Creative rotation",
+        "Campaign structure improvements",
+        "Periodic performance reports"
+      ],
+      "footer": "The goal is to improve the efficiency and stability of your campaigns. We make decisions based on real data to maximize your investment."
+    },
+    "signal_gold": {
+      "title": "Signal Gold",
+      "subtext": "For businesses seeking aggressive growth with a performance marketing focus.",
+      "pills": [
+        "Full funnel analysis",
+        "Campaign and creative testing",
+        "New audience testing",
+        "New monthly creatives",
+        "Audience expansion",
+        "Advanced optimization",
+        "Scaling strategy"
+      ],
+      "footer": "The goal is to turn advertising into a scalable channel. Advertising becomes the real engine of growth for your business."
+    }
+  },
+  "faq": {
+    "title_part1": "Frequently Asked",
+    "title_bold": "Questions",
+    "subtitle": "Everything you need to know before working with us.",
+    "items": [
+      {
+        "q": "Do you have any minimum requirements to work together?",
+        "a": "We look for businesses that already have a validated product or service and are ready to scale. We recommend a minimum ad spend investment to see significant and profitable results."
+      },
+      {
+        "q": "How soon will I see results?",
+        "a": "Early indicators (qualified traffic, leads) are seen in the first 7-14 days. However, deep optimization and predictable, scalable ROI takes about 45 to 90 days depending on your industry and sales cycle."
+      },
+      {
+        "q": "Do you handle other services besides advertising?",
+        "a": "We specialize 100% in Performance Marketing and Paid Media (Meta Ads, Google Ads). We believe that focusing on one single area allows us to deliver results far superior to those of a generalist traditional agency."
+      },
+      {
+        "q": "How is communication during the service?",
+        "a": "We maintain a direct and exclusive channel with your team, where we track progress and resolve doubts quickly. In addition, we send performance reports and organize strategy meetings to align goals."
+      },
+      {
+        "q": "Who is in charge of making the creatives (photos/videos)?",
+        "a": "Depending on the plan you choose, we can provide the initial creatives or advise and guide your internal team by delivering proven scripts, references, and guidelines to maximize conversion."
+      }
+    ]
+  },
+  "cta": {
+    "title_part1": "We design",
+    "title_bold": "digital marketing and advertising strategies",
+    "title_part2": "that scale your sales.",
+    "subtext": "Leave your brand's growth in the hands of an expert digital advertising agency and maximize your ROI.",
+    "button": "I want to start now"
+  },
+  "footer": {
+    "badge": "Contact",
+    "title": "Let's talk.",
+    "subtext": "Fill out the form or schedule directly on our calendar to coordinate a meeting and discover how to scale your business.",
+    "form": {
+      "name": "Full Name",
+      "company": "Company Name",
+      "phone": "Phone Number",
+      "message": "What is your company about?",
+      "web": "Website and social media (optional)",
+      "button": "Send message",
+      "success": "Message sent successfully!",
+      "search_country": "Search country or code...",
+      "no_countries": "No countries found"
+    },
+    "copyright": "SIGNAL"
+  }
+}

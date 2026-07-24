@@ -1,0 +1,142 @@
+{
+  "metadata": {
+    "title": "Signal | Agencia de Marketing y Publicidad",
+    "description": "Agencia experta en marketing digital, publicidad online y posicionamiento."
+  },
+  "nav": {
+    "lang_es": "Español",
+    "lang_en": "Inglés"
+  },
+  "hero": {
+    "badge": "Agencia de Marketing Digital y Publicidad",
+    "title1": "Agencia de Marketing y",
+    "title2": "Publicidad para marcas líderes.",
+    "subtitle1": "Impulsamos el crecimiento de tu negocio con",
+    "subtitle2": "estrategias de marketing digital, publicidad y branding."
+  },
+  "experience": {
+    "badge": "Método y experiencia",
+    "heading_part1": "Nos enfocamos en",
+    "heading_bold": "estrategias de marketing digital",
+    "heading_part2": "orientadas a escalar tu negocio.",
+    "subtext": "Diseñamos campañas de publicidad, posicionamiento SEO y branding corporativo para conectar tu marca con su audiencia ideal y aumentar tus ventas."
+  },
+  "about": {
+    "greeting": "¡HOLA!",
+    "title": "SOMOS SIGNAL.",
+    "p1_part1": "Especialistas en",
+    "p1_bold": "estrategias de marketing digital, publicidad rentable y crecimiento de negocios.",
+    "p1_part2": "Y ahora, si nos permites,",
+    "p1_bold2": "tu agencia estratégica.",
+    "p2_part1": "Es probable que ya hayas visto los resultados de nuestro trabajo. Cada año,",
+    "p2_bold": "nuestras campañas de marketing digital y publicidad online generan un altísimo retorno de inversión (ROI).",
+    "p2_part2": "Pero sin importar cómo llegaste aquí,",
+    "p2_bold2": "gracias por confiar.",
+    "p3_part1": "Hoy más que nunca, en un mercado tan competitivo,",
+    "p3_bold": "se necesitan agencias",
+    "p3_part2": "que combinan",
+    "p3_bold2": "análisis de datos con estrategias de posicionamiento web",
+    "p3_part3": ", y",
+    "p3_bold3": "creatividad con performance.",
+    "pill1": "No sólo hacemos publicidad",
+    "pill2": "Escalamos tus ventas"
+  },
+  "services": {
+    "intro_part1": "Planes diseñados para cada etapa de tu crecimiento. Construimos",
+    "intro_bold": "sistemas de adquisición de clientes",
+    "intro_part2": "que escalan contigo."
+  },
+  "plans": {
+    "signal_silver": {
+      "title": "Signal Silver",
+      "subtext": "Para negocios que quieren comenzar a usar publicidad digital de forma estructurada.",
+      "pills": [
+        "Análisis inicial del negocio",
+        "Diseño de la arquitectura de campañas",
+        "Configuración de plataformas publicitarias",
+        "Configuración del seguimiento",
+        "Producción de 3 creativos iniciales",
+        "Lanzamiento de campañas"
+      ],
+      "footer": "Este plan construye la base de tu sistema de adquisición de clientes. Al finalizar podés gestionar las campañas internamente o escalar al siguiente nivel."
+    },
+    "signal_bronze": {
+      "title": "Signal Bronze",
+      "subtext": "Para negocios que ya invierten en publicidad y quieren mejorar su rendimiento.",
+      "pills": [
+        "Optimización continua de campañas",
+        "Análisis de métricas de rendimiento",
+        "Ajustes de presupuesto",
+        "Rotación de creativos",
+        "Mejoras en la estructura de campañas",
+        "Reportes de rendimiento periódicos"
+      ],
+      "footer": "El objetivo es mejorar la eficiencia y estabilidad de tus campañas. Tomamos decisiones en base a datos reales para maximizar tu inversión."
+    },
+    "signal_gold": {
+      "title": "Signal Gold",
+      "subtext": "Para negocios que buscan crecimiento agresivo con enfoque de performance marketing.",
+      "pills": [
+        "Análisis completo del embudo",
+        "Testing de campañas y creativos",
+        "Testing de nuevos públicos",
+        "Nuevos creativos mensuales",
+        "Expansión de audiencias",
+        "Optimización avanzada",
+        "Estrategia de escalado"
+      ],
+      "footer": "El objetivo es convertir la publicidad en un canal escalable. La publicidad se convierte en el motor real de crecimiento de tu negocio."
+    }
+  },
+  "faq": {
+    "title_part1": "Preguntas",
+    "title_bold": "frecuentes",
+    "subtitle": "Todo lo que necesitás saber antes de empezar a trabajar con nosotros.",
+    "items": [
+      {
+        "q": "¿Tienen algún requisito mínimo para trabajar juntos?",
+        "a": "Buscamos negocios que ya tengan validado su producto o servicio y estén listos para escalar. Recomendamos una inversión mínima en pauta para ver resultados significativos y rentables."
+      },
+      {
+        "q": "¿En cuánto tiempo veré resultados?",
+        "a": "Los primeros indicadores (tráfico calificado, leads) se ven en los primeros 7-14 días. Sin embargo, la optimización profunda y el retorno de inversión predecible y escalable toma alrededor de 45 a 90 días dependiendo de tu industria y ciclo de ventas."
+      },
+      {
+        "q": "¿Manejan otros servicios además de la publicidad?",
+        "a": "Nos especializamos 100% en Performance Marketing y Paid Media (Meta Ads, Google Ads). Creemos que enfocarnos en una sola área nos permite entregar resultados muy superiores a los de una agencia tradicional generalista."
+      },
+      {
+        "q": "¿Cómo es la comunicación durante el servicio?",
+        "a": "Mantenemos un canal directo y exclusivo con tu equipo, donde hacemos seguimiento y resolvemos dudas rápidamente. Además, enviamos reportes de rendimiento y organizamos reuniones de estrategia para alinear objetivos."
+      },
+      {
+        "q": "¿Quién se encarga de hacer los creativos (fotos/videos)?",
+        "a": "Dependiendo del plan que elijas, podemos proveer los creativos iniciales o asesorar y guiar a tu equipo interno entregando guiones, referencias y directrices probadas para maximizar la conversión."
+      }
+    ]
+  },
+  "cta": {
+    "title_part1": "Diseñamos",
+    "title_bold": "estrategias de marketing y publicidad digital",
+    "title_part2": "que escalan tus ventas.",
+    "subtext": "Dejá el crecimiento de tu marca en manos de una agencia experta en publicidad digital y maximizá tu ROI.",
+    "button": "Quiero empezar ahora"
+  },
+  "footer": {
+    "badge": "Contacto",
+    "title": "Hablemos.",
+    "subtext": "Completá el formulario o agendá directamente en nuestro calendario para coordinar una reunión y descubrir cómo escalar tu negocio.",
+    "form": {
+      "name": "Nombre y apellido",
+      "company": "Nombre de la empresa",
+      "phone": "Número de teléfono",
+      "message": "¿De qué se trata tu empresa?",
+      "web": "Página web y redes sociales (opcional)",
+      "button": "Enviar mensaje",
+      "success": "¡Mensaje enviado correctamente!",
+      "search_country": "Buscar país o código...",
+      "no_countries": "No se encontraron países"
+    },
+    "copyright": "SIGNAL"
+  }
+}
