@@ -60,37 +60,37 @@ export default function FaqSection() {
   };
 
   return (
-    <section ref={containerRef} className="relative w-full py-24 bg-white text-mystic-navy">
+    <section ref={containerRef} className="relative w-full py-24 bg-[#090c1f] text-white">
       <div className="max-w-[800px] mx-auto px-6 lg:px-12">
         
         {/* Header */}
         <div ref={headerRef} className="mb-16 text-center">
-          <h2 className="text-3xl md:text-5xl font-extralight tracking-tight mb-4">
-            {dict.faq.title_part1} <strong className="font-semibold">{dict.faq.title_bold}</strong>
+          <h2 className="text-3xl md:text-5xl font-extralight tracking-tight mb-4 text-white">
+            {dict.faq.title_part1} <strong className="font-semibold text-turquesa">{dict.faq.title_bold}</strong>
           </h2>
-          <p className="text-lg text-mystic-navy/70 font-light max-w-xl mx-auto">
+          <p className="text-lg text-slate-300 font-light max-w-xl mx-auto">
             {dict.faq.subtitle}
           </p>
         </div>
 
         {/* FAQ List */}
-        <div className="flex flex-col border-t border-mystic-navy/10">
+        <div className="flex flex-col border-t border-white/10">
           {faqs.map((faq, idx) => {
             const isOpen = openIndex === idx;
             return (
               <div 
                 key={idx} 
                 ref={(el) => { faqRefs.current[idx] = el; }}
-                className="border-b border-mystic-navy/10 group"
+                className="border-b border-white/10 group"
               >
                 <button
                   onClick={() => toggleOpen(idx)}
                   className="w-full flex justify-between items-center py-6 md:py-8 text-left focus:outline-none transition-colors hover:text-turquesa"
                 >
-                  <span className="text-lg md:text-xl font-medium pr-8 transition-colors duration-300">
+                  <span className="text-lg md:text-xl font-medium pr-8 transition-colors duration-300 text-white group-hover:text-turquesa">
                     {faq.q}
                   </span>
-                  <div className={`flex-shrink-0 w-8 h-8 flex items-center justify-center rounded-full border transition-all duration-300 ${isOpen ? 'border-turquesa bg-turquesa text-mystic-navy rotate-45' : 'border-mystic-navy/20 group-hover:border-turquesa'}`}>
+                  <div className={`flex-shrink-0 w-8 h-8 flex items-center justify-center rounded-full border transition-all duration-300 ${isOpen ? 'border-turquesa bg-turquesa text-[#090c1f] rotate-45' : 'border-white/20 text-white group-hover:border-turquesa group-hover:text-turquesa'}`}>
                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                       <path d="M12 5v14"></path>
                       <path d="M5 12h14"></path>
@@ -105,7 +105,7 @@ export default function FaqSection() {
                   }`}
                 >
                   <div className="overflow-hidden">
-                    <p className="text-base md:text-lg text-mystic-navy/70 font-light leading-relaxed pb-6 md:pb-8 pr-12">
+                    <p className="text-base md:text-lg text-slate-300 font-light leading-relaxed pb-6 md:pb-8 pr-12">
                       {faq.a}
                     </p>
                   </div>

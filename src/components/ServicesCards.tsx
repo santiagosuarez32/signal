@@ -12,10 +12,10 @@ export default function ServicesCards() {
       subtext: dict.plans.signal_silver.subtext,
       pills: dict.plans.signal_silver.pills,
       footer: dict.plans.signal_silver.footer,
-      bgColor: "bg-gradient-to-br from-slate-200 via-slate-300 to-slate-400",
-      numberColor: "text-white",
-      textColor: "text-mystic-navy",
-      pillColor: "bg-white text-mystic-navy"
+      bgColor: "bg-gradient-to-br from-slate-700 via-slate-800 to-slate-900 border border-slate-600/50",
+      numberColor: "text-white/20",
+      textColor: "text-white",
+      pillColor: "bg-slate-700/80 text-white border border-slate-500/40"
     },
     {
       id: 2,
@@ -44,13 +44,13 @@ export default function ServicesCards() {
   ];
 
   return (
-    <section className="relative z-10 w-full py-24 bg-white text-mystic-navy">
+    <section className="relative z-10 w-full pt-6 pb-16 bg-[#090c1f] text-white">
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
         
         {/* Intro text */}
         <div className="max-w-4xl mb-16">
-          <p className="text-2xl md:text-3xl text-mystic-navy leading-tight font-light">
-            {dict.services.intro_part1} <strong className="font-extrabold">{dict.services.intro_bold}</strong> {dict.services.intro_part2}
+          <p className="text-2xl md:text-3xl text-white leading-tight font-light">
+            {dict.services.intro_part1} <strong className="font-extrabold text-turquesa">{dict.services.intro_bold}</strong> {dict.services.intro_part2}
           </p>
         </div>
 

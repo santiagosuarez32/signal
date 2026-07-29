@@ -1,10 +1,37 @@
 @import "tailwindcss";
 
+@font-face {
+  font-family: 'Ergonomique';
+  src: url('/fonts/ergonomique-regular.otf') format('opentype');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
 
+@font-face {
+  font-family: 'Ergonomique';
+  src: url('/fonts/ergonomique-italic.otf') format('opentype');
+  font-weight: 100 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Kenoky';
+  src: url('/fonts/Kenoky.woff2') format('woff2'),
+       url('/fonts/Kenoky.woff') format('woff'),
+       url('/fonts/Kenoky.otf') format('opentype'),
+       url('/fonts/Kenoky.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
 
 :root {
-  --background: #ffffff; /* White */
-  --foreground: #0f172a; /* Slate 900 */
+  --background: #090c1f; /* Deep Mystic Navy */
+  --foreground: #f8fafc; /* Slate 50 */
+  --font-ergonomique: "Ergonomique", var(--font-manrope), system-ui, sans-serif;
+  --font-kenoky: "Kenoky", var(--font-poppins), serif;
 }
 
 @theme inline {
@@ -14,7 +41,10 @@
   --color-secondary: #1e23ac;
   --color-turquesa: #2dccd2;
   --color-mystic-navy: #1e23ac;
-  --font-sans: var(--font-poppins), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-ergonomique);
+  --font-display: var(--font-kenoky);
+  --font-ergonomique: var(--font-ergonomique);
+  --font-kenoky: var(--font-kenoky);
 }
 
 html {
@@ -24,7 +54,11 @@ html {
 body {
   background-color: var(--background);
   color: var(--foreground);
-  font-family: var(--font-sans);
+  font-family: var(--font-ergonomique);
+}
+
+h1, h2, h3, h4, h5, h6, .font-kenoky {
+  font-family: var(--font-kenoky);
 }
 
 /* Custom Scrollbar */
@@ -82,7 +116,7 @@ html.lenis, html.lenis body {
 .presentation-step3-section {
   position: relative;
   z-index: 2;
-  background-color: #fff;
+  background-color: #090c1f;
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -311,13 +345,13 @@ html.lenis, html.lenis body {
 .step3-marquee::before {
   top: 0;
   left: 0;
-  background: linear-gradient(to right, #ffffff 0%, #ffffff 20%, rgba(255, 255, 255, 0) 100%);
+  background: linear-gradient(to right, #090c1f 0%, #090c1f 20%, rgba(9, 12, 31, 0) 100%);
 }
 
 .step3-marquee::after {
   top: 0;
   right: 0;
-  background: linear-gradient(to left, #ffffff 0%, #ffffff 20%, rgba(255, 255, 255, 0) 100%);
+  background: linear-gradient(to left, #090c1f 0%, #090c1f 20%, rgba(9, 12, 31, 0) 100%);
 }
 
 @keyframes marquee-step3 {
@@ -327,5 +361,38 @@ html.lenis, html.lenis body {
   to {
     transform: translateX(-50%);
   }
+}
+
+/* Elfsight Instagram Widget Custom Dark Theme */
+.elfsight-app-38ccda90-6f49-45d9-a689-3b90377b8a85,
+[class*="eapps-instagram-feed"],
+[class*="eapps-widget-"],
+div[class*="eapps-"] {
+  background-color: #090c1f !important;
+  color: #ffffff !important;
+}
+
+[class*="eapps-"] *,
+[class*="elfsight-"] * {
+  color: #ffffff !important;
+}
+
+[class*="eapps-"] [class*="header"],
+[class*="eapps-"] [class*="title"],
+[class*="eapps-"] [class*="username"],
+[class*="eapps-"] [class*="caption"] {
+  color: #ffffff !important;
+}
+
+[class*="eapps-"] [class*="post-item"],
+[class*="eapps-"] [class*="card"],
+[class*="eapps-"] [class*="container"] {
+  background-color: #0e1333 !important;
+  border-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+[class*="eapps-"] a,
+[class*="eapps-"] [class*="link"] {
+  color: #2dccd2 !important;
 }
 

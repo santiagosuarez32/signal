@@ -57,9 +57,9 @@ export default async function RootLayout({
   return (
     <html
       lang={lang}
-      className={`${poppins.variable} ${manrope.variable} h-full antialiased bg-gray-950 text-slate-100 selection:bg-emerald-400/30 selection:text-emerald-200`}
+      className={`${poppins.variable} ${manrope.variable} h-full antialiased bg-[#090c1f] text-slate-100 selection:bg-turquesa/30 selection:text-turquesa`}
     >
-      <body className="min-h-full flex flex-col font-sans">
+      <body className="min-h-full flex flex-col font-sans bg-[#090c1f]">
         <TranslationProvider dict={dict} lang={lang}>
           <SmoothScroll>
             <Navbar />

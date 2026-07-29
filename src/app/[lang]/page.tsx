@@ -95,17 +95,17 @@ export default function Home() {
           className="relative w-full flex flex-col justify-center min-h-screen overflow-hidden origin-top"
         >
           {/* Background */}
-          <div className="fixed inset-0 w-full h-screen z-0 pointer-events-none overflow-hidden bg-black">
+          <div className="fixed inset-0 w-full h-screen z-0 pointer-events-none overflow-hidden bg-[#090c1f]">
             <video 
               src="https://pub-7dcc71e466f849e5959259c33a6847ec.r2.dev/7706630-uhd_4096_2160_25fps.mp4" 
               autoPlay 
               loop 
               muted 
               playsInline 
-              className="absolute inset-0 w-full h-full object-cover opacity-50"
+              className="absolute inset-0 w-full h-full object-cover opacity-40 mix-blend-luminosity"
             />
             {/* Dark overlay to ensure text readability */}
-            <div className="absolute inset-0 bg-black/40" />
+            <div className="absolute inset-0 bg-[#090c1f]/60" />
           </div>
 
           <div ref={textContainerRef} className="relative z-10 w-full max-w-[1400px] mx-auto flex flex-col items-start justify-center pt-32 pb-20 px-8 md:px-16 lg:px-24 h-[100vh]">
@@ -133,10 +133,10 @@ export default function Home() {
       </section>
       </div>
 
-      <div className="relative z-10 w-full bg-white">
+      <div className="relative z-10 w-full bg-[#090c1f] text-white">
       
       {/* Method & Experience Section */}
-      <section className="relative z-10 w-full text-[#3c3c3b]">
+      <section className="relative z-10 w-full text-white bg-[#090c1f]">
         <div
           style={{ paddingTop: 80, paddingBottom: 60, maxWidth: 1000, marginInline: "auto" }}
           className="px-8 md:px-16 lg:px-24"
@@ -151,15 +151,16 @@ export default function Home() {
               fontSize: 14,
               fontWeight: 400,
               marginBottom: 32,
-              color: "var(--color-mystic-navy)",
+              color: "var(--color-turquesa)",
+              backgroundColor: "rgba(45, 204, 210, 0.08)",
             }}
           >
             {dict.experience.badge}
           </div>
 
           {/* Heading */}
-          <h2 className="text-2xl md:text-3xl text-mystic-navy leading-tight font-light mb-7">
-            {dict.experience.heading_part1} <strong className="font-extrabold">{dict.experience.heading_bold}</strong> {dict.experience.heading_part2}
+          <h2 className="text-2xl md:text-4xl text-white leading-tight font-light mb-7">
+            {dict.experience.heading_part1} <strong className="font-extrabold text-turquesa">{dict.experience.heading_bold}</strong> {dict.experience.heading_part2}
           </h2>
 
           {/* Subtext */}
@@ -169,7 +170,7 @@ export default function Home() {
               fontWeight: 300,
               lineHeight: 1.6,
               maxWidth: 640,
-              color: "var(--color-mystic-navy)",
+              color: "#cbd5e1",
               marginBottom: 60,
             }}
           >
@@ -178,108 +179,92 @@ export default function Home() {
         </div>
 
         {/* Marquee Logos */}
-        <div className="px-8 md:px-16 lg:px-24" style={{ maxWidth: 1400, marginInline: "auto" }}>
+        <div className="px-4 md:px-16 lg:px-24 max-w-[1400px] mx-auto">
           <div className="relative">
             {/* Fade left */}
-            <div style={{
-              position: "absolute", left: 0, top: 0, width: 100, height: "100%",
-              background: "linear-gradient(to right, #fff 40%, rgba(255,255,255,0) 100%)",
-              zIndex: 9, pointerEvents: "none",
-            }} />
+            <div className="absolute left-0 top-0 w-10 md:w-24 h-full bg-gradient-to-r from-[#090c1f] via-[#090c1f]/80 to-transparent z-10 pointer-events-none" />
             {/* Fade right */}
-            <div style={{
-              position: "absolute", right: 0, top: 0, width: 100, height: "100%",
-              background: "linear-gradient(to left, #fff 40%, rgba(255,255,255,0) 100%)",
-              zIndex: 9, pointerEvents: "none",
-            }} />
+            <div className="absolute right-0 top-0 w-10 md:w-24 h-full bg-gradient-to-l from-[#090c1f] via-[#090c1f]/80 to-transparent z-10 pointer-events-none" />
 
-            <div
-              style={{
-                borderTop: "1.5px solid #3c3c3b",
-                borderBottom: "1.5px solid #3c3c3b",
-                overflow: "hidden",
-                height: 140,
-                display: "flex",
-                alignItems: "center",
-              }}
-            >
+            <div className="border-y border-white/15 overflow-hidden h-[90px] md:h-[140px] flex items-center">
               {/* Outer wrapper */}
-              <div style={{ width: "100%", overflow: "hidden" }}>
-              <div
-                style={{
-                  display: "inline-flex",
-                  whiteSpace: "nowrap",
-                  willChange: "transform",
-                  animation: "marquee-logos 30s linear infinite",
-                  alignItems: "center",
-                }}
-              >
-                {[...Array(4)].map((_, rep) => (
-                  <div key={rep} style={{ display: "inline-flex", alignItems: "center", gap: 50, paddingRight: 50 }}>
-                    <img src="/marquee/1.png" alt="Brand 1" style={{ height: 130, width: 130, objectFit: "contain", flexShrink: 0, filter: "brightness(0)" }} />
-                    <img src="/marquee/2.png" alt="Brand 2" style={{ height: 130, width: 130, objectFit: "contain", flexShrink: 0, filter: "brightness(0)" }} />
-                    <img src="/marquee/3.png" alt="Brand 3" style={{ height: 130, width: 130, objectFit: "contain", flexShrink: 0, filter: "brightness(0)" }} />
-                    <img src="/marquee/4.png" alt="Brand 4" style={{ height: 130, width: 130, objectFit: "contain", flexShrink: 0, filter: "brightness(0)" }} />
-                    <img src="/marquee/5.png" alt="Brand 5" style={{ height: 130, width: 130, objectFit: "contain", flexShrink: 0, filter: "brightness(0)" }} />
-                  </div>
-                ))}
+              <div className="w-full overflow-hidden">
+                <div
+                  style={{
+                    display: "inline-flex",
+                    whiteSpace: "nowrap",
+                    willChange: "transform",
+                    animation: "marquee-logos 30s linear infinite",
+                    alignItems: "center",
+                  }}
+                >
+                  {[...Array(4)].map((_, rep) => (
+                    <div key={rep} className="inline-flex items-center gap-6 md:gap-12 pr-6 md:pr-12">
+                      <img src="/marquee/1.png" alt="Brand 1" className="h-16 w-16 md:h-28 md:w-28 object-contain shrink-0" />
+                      <img src="/marquee/2.png" alt="Brand 2" className="h-16 w-16 md:h-28 md:w-28 object-contain shrink-0" />
+                      <img src="/marquee/3.png" alt="Brand 3" className="h-16 w-16 md:h-28 md:w-28 object-contain shrink-0" />
+                      <img src="/marquee/4.png" alt="Brand 4" className="h-16 w-16 md:h-28 md:w-28 object-contain shrink-0" />
+                      <img src="/marquee/5.png" alt="Brand 5" className="h-16 w-16 md:h-28 md:w-28 object-contain shrink-0" />
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
 
       </section>
 
 
       {/* About Section */}
-
-      <section className="relative z-10 w-full px-6 py-24 max-w-6xl mx-auto text-mystic-navy">
-        <div className="flex flex-col lg:flex-row items-start gap-12 lg:gap-16">
-          
-          {/* Image Column */}
-          <div className="w-full lg:w-[45%] relative shrink-0">
-            <div className="w-full aspect-[4/5] bg-[#EBEBEB] rounded overflow-hidden relative shadow-lg">
-              <img 
-                src="/about.jpg" 
-                alt="Portrait"
-                className="w-full h-full object-cover object-top mix-blend-multiply opacity-90"
-              />
-            </div>
-          </div>
-
-          {/* Text Column */}
-          <div className="w-full lg:w-[55%] flex flex-col justify-start pt-8 lg:pt-0 relative">
+      <section className="relative z-10 w-full bg-[#090c1f] pt-16 pb-8 text-white">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="flex flex-col lg:flex-row items-start gap-12 lg:gap-16">
             
-            {/* Overlapping Heading */}
-            <div className="mb-10 lg:absolute lg:top-10 lg:left-[-140px] z-10">
-              <p className="text-xl md:text-2xl text-turquesa font-semibold tracking-widest text-right pr-2">{dict.about.greeting}</p>
-              <h2 className="text-5xl md:text-6xl lg:text-[5.5rem] font-thin text-mystic-navy tracking-tight leading-none whitespace-nowrap">
-                {dict.about.title}
-              </h2>
-            </div>
-
-            <div className="lg:mt-48 space-y-8 text-lg md:text-[1.1rem] text-mystic-navy/80 leading-relaxed font-light">
-              <p className="text-2xl md:text-3xl text-mystic-navy leading-tight">
-                {dict.about.p1_part1} <strong className="font-extrabold">{dict.about.p1_bold}</strong> {dict.about.p1_part2} <strong className="font-extrabold">{dict.about.p1_bold2}</strong>
-              </p>
-              
-              <p>
-                {dict.about.p2_part1} <strong className="font-semibold text-mystic-navy">{dict.about.p2_bold}</strong> {dict.about.p2_part2} <strong className="font-semibold text-mystic-navy">{dict.about.p2_bold2}</strong>
-              </p>
-
-              <p>
-                {dict.about.p3_part1} <strong className="font-semibold text-mystic-navy">{dict.about.p3_bold}</strong> {dict.about.p3_part2} <strong className="font-semibold text-mystic-navy">{dict.about.p3_bold2}</strong>{dict.about.p3_part3} <strong className="font-semibold text-mystic-navy">{dict.about.p3_bold3}</strong>
-              </p>
-              
-              <div className="flex flex-col items-start gap-2 pt-2 font-bold text-white text-lg">
-                <span className="bg-turquesa px-3 py-1 inline-block">{dict.about.pill1}</span>
-                <span className="bg-mystic-navy px-3 py-1 inline-block">{dict.about.pill2}</span>
+            {/* Image Column */}
+            <div className="w-full lg:w-[45%] relative shrink-0">
+              <div className="w-full aspect-[4/5] bg-[#0e1333] rounded-2xl overflow-hidden relative shadow-2xl border border-white/10">
+                <img 
+                  src="/about.jpg" 
+                  alt="Portrait"
+                  className="w-full h-full object-cover object-top opacity-90"
+                />
               </div>
             </div>
 
+            {/* Text Column */}
+            <div className="w-full lg:w-[55%] flex flex-col justify-start pt-8 lg:pt-0 relative">
+              
+              {/* Overlapping Heading */}
+              <div className="mb-10 lg:absolute lg:top-10 lg:left-[-140px] z-10">
+                <p className="text-xl md:text-2xl text-turquesa font-semibold tracking-widest text-right pr-2">{dict.about.greeting}</p>
+                <h2 className="text-5xl md:text-6xl lg:text-[5.5rem] font-thin text-white tracking-tight leading-none whitespace-nowrap drop-shadow-lg">
+                  {dict.about.title}
+                </h2>
+              </div>
+
+              <div className="lg:mt-48 space-y-8 text-lg md:text-[1.1rem] text-slate-300 leading-relaxed font-light">
+                <p className="text-2xl md:text-3xl text-white leading-tight">
+                  {dict.about.p1_part1} <strong className="font-extrabold text-turquesa">{dict.about.p1_bold}</strong> {dict.about.p1_part2} <strong className="font-extrabold text-white">{dict.about.p1_bold2}</strong>
+                </p>
+                
+                <p>
+                  {dict.about.p2_part1} <strong className="font-semibold text-white">{dict.about.p2_bold}</strong> {dict.about.p2_part2} <strong className="font-semibold text-white">{dict.about.p2_bold2}</strong>
+                </p>
+
+                <p>
+                  {dict.about.p3_part1} <strong className="font-semibold text-white">{dict.about.p3_bold}</strong> {dict.about.p3_part2} <strong className="font-semibold text-white">{dict.about.p3_bold2}</strong>{dict.about.p3_part3} <strong className="font-semibold text-white">{dict.about.p3_bold3}</strong>
+                </p>
+                
+                <div className="flex flex-col items-start gap-2 pt-2 font-bold text-white text-lg">
+                  <span className="bg-turquesa text-mystic-navy px-4 py-1.5 rounded-md inline-block shadow-md">{dict.about.pill1}</span>
+                  <span className="bg-mystic-navy text-white border border-white/20 px-4 py-1.5 rounded-md inline-block shadow-md">{dict.about.pill2}</span>
+                </div>
+              </div>
+
+            </div>
+            
           </div>
-          
         </div>
       </section>
 
@@ -289,7 +274,7 @@ export default function Home() {
       <Testimonials />
 
       {/* Instagram Feed Section */}
-      <section className="relative z-10 w-full py-12">
+      <section className="relative z-10 w-full py-12 bg-[#090c1f]">
         <Script src="https://elfsightcdn.com/platform.js" strategy="lazyOnload" />
         <div className="elfsight-app-38ccda90-6f49-45d9-a689-3b90377b8a85" data-elfsight-app-lazy></div>
       </section>

@@ -19,70 +19,64 @@ const features = [
 
 export default function PlansTable() {
   const renderValue = (value: string | boolean) => {
-    if (value === true) return <Check className="w-6 h-6 text-turquesa mx-auto" strokeWidth={3} />;
-    if (value === false) return <X className="w-6 h-6 text-mystic-navy/50 mx-auto" strokeWidth={3} />;
-    return <span className="text-sm md:text-base font-semibold text-mystic-navy">{value}</span>;
+    if (value === true) return <Check className="w-3.5 h-3.5 sm:w-5 sm:h-5 md:w-6 md:h-6 text-turquesa mx-auto" strokeWidth={3} />;
+    if (value === false) return <X className="w-3.5 h-3.5 sm:w-5 sm:h-5 md:w-6 md:h-6 text-slate-500/50 mx-auto" strokeWidth={3} />;
+    return <span className="text-[9px] sm:text-xs md:text-base font-semibold text-white leading-none">{value}</span>;
   };
 
   return (
-    <section className="relative w-full py-24 bg-white">
-      <div className="max-w-[1200px] mx-auto px-6 lg:px-12">
+    <section className="relative w-full py-12 md:py-24 bg-[#090c1f] text-white">
+      <div className="max-w-[1200px] mx-auto px-3 sm:px-6 lg:px-12">
         
         {/* Title */}
-        <div className="flex flex-col md:flex-row justify-between items-center mb-12">
-          <h2 className="text-5xl md:text-7xl font-black text-mystic-navy uppercase tracking-tighter">
+        <div className="flex flex-col md:flex-row justify-between items-center mb-6 md:mb-12">
+          <h2 className="text-3xl md:text-6xl font-black text-white uppercase tracking-tighter text-center md:text-left">
             PLANES
           </h2>
-          {/* Decorative burst/logo could go here, omitting for simplicity */}
-          <div className="text-4xl md:text-6xl font-black text-turquesa tracking-tighter lowercase italic">
-            signal
-          </div>
         </div>
 
-        {/* Table Container */}
-        <div className="w-full overflow-x-auto pb-4">
-          <div className="min-w-[800px] w-full">
-            
-            {/* Header */}
-            <div className="grid grid-cols-4 bg-mystic-navy text-white rounded-full py-4 px-8 mb-4 items-center">
-              <div className="col-span-1 font-bold text-lg md:text-xl uppercase tracking-wider">
-                CARACTERÍSTICAS
-              </div>
-              <div className="col-span-1 text-center font-medium text-lg md:text-xl tracking-wider bg-clip-text text-transparent bg-gradient-to-br from-slate-200 via-slate-300 to-slate-400">
-                Signal Silver
-              </div>
-              <div className="col-span-1 text-center font-medium text-lg md:text-xl tracking-wider bg-clip-text text-transparent bg-gradient-to-br from-amber-500 via-[#cd7f32] to-amber-700">
-                Signal Bronze
-              </div>
-              <div className="col-span-1 text-center font-medium text-lg md:text-xl tracking-wider bg-clip-text text-transparent bg-gradient-to-br from-yellow-300 via-[#e8b923] to-yellow-600">
-                Signal Gold
-              </div>
+        {/* Table Container - Fits 100% width on mobile */}
+        <div className="w-full">
+          
+          {/* Header */}
+          <div className="grid grid-cols-4 bg-[#1e23ac] border border-white/15 text-white rounded-xl sm:rounded-2xl py-2.5 sm:py-4 px-2 sm:px-4 md:px-8 mb-2 sm:mb-4 items-center shadow-lg">
+            <div className="col-span-1 font-bold text-[9px] sm:text-xs md:text-xl uppercase tracking-tight sm:tracking-wider">
+              CARACTERÍSTICAS
             </div>
-
-            {/* Rows */}
-            <div className="flex flex-col gap-2">
-              {features.map((feature, idx) => (
-                <div 
-                  key={idx} 
-                  className="grid grid-cols-4 items-center py-4 px-8 border-b border-mystic-navy/10 hover:bg-white/50 transition-colors"
-                >
-                  <div className="col-span-1 font-medium text-mystic-navy text-sm md:text-base pr-4">
-                    {feature.name}
-                  </div>
-                  <div className="col-span-1 text-center">
-                    {renderValue(feature.silver)}
-                  </div>
-                  <div className="col-span-1 text-center">
-                    {renderValue(feature.bronze)}
-                  </div>
-                  <div className="col-span-1 text-center">
-                    {renderValue(feature.gold)}
-                  </div>
-                </div>
-              ))}
+            <div className="col-span-1 text-center font-bold text-[9px] sm:text-xs md:text-xl tracking-tight sm:tracking-wider bg-clip-text text-transparent bg-gradient-to-br from-slate-200 via-slate-300 to-slate-400">
+              <span className="hidden sm:inline">Signal </span>Silver
             </div>
-
+            <div className="col-span-1 text-center font-bold text-[9px] sm:text-xs md:text-xl tracking-tight sm:tracking-wider bg-clip-text text-transparent bg-gradient-to-br from-amber-500 via-[#cd7f32] to-amber-700">
+              <span className="hidden sm:inline">Signal </span>Bronze
+            </div>
+            <div className="col-span-1 text-center font-bold text-[9px] sm:text-xs md:text-xl tracking-tight sm:tracking-wider bg-clip-text text-transparent bg-gradient-to-br from-yellow-300 via-[#e8b923] to-yellow-600">
+              <span className="hidden sm:inline">Signal </span>Gold
+            </div>
           </div>
+
+          {/* Rows */}
+          <div className="flex flex-col gap-1.5 sm:gap-2">
+            {features.map((feature, idx) => (
+              <div 
+                key={idx} 
+                className="grid grid-cols-4 items-center py-2 sm:py-3.5 px-2 sm:px-4 md:px-8 border-b border-white/10 bg-[#0e1333]/60 rounded-lg sm:rounded-xl hover:bg-[#0e1333] transition-colors"
+              >
+                <div className="col-span-1 font-medium text-slate-200 text-[9px] sm:text-xs md:text-base leading-tight pr-1 sm:pr-4">
+                  {feature.name}
+                </div>
+                <div className="col-span-1 text-center">
+                  {renderValue(feature.silver)}
+                </div>
+                <div className="col-span-1 text-center">
+                  {renderValue(feature.bronze)}
+                </div>
+                <div className="col-span-1 text-center">
+                  {renderValue(feature.gold)}
+                </div>
+              </div>
+            ))}
+          </div>
+
         </div>
 
       </div>
