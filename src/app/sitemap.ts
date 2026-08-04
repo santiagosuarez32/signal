@@ -28,5 +28,29 @@ export default function sitemap(): MetadataRoute.Sitemap {
         },
       },
     },
+    {
+      url: `${baseUrl}/es/servicios`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 0.9,
+      alternates: {
+        languages: {
+          es: `${baseUrl}/es/servicios`,
+          en: `${baseUrl}/en/servicios`,
+        },
+      },
+    },
+    {
+      url: `${baseUrl}/en/servicios`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 0.9,
+      alternates: {
+        languages: {
+          es: `${baseUrl}/es/servicios`,
+          en: `${baseUrl}/en/servicios`,
+        },
+      },
+    },
   ];
 }

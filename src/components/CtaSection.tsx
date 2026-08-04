@@ -52,13 +52,13 @@ export default function CtaSection() {
             {dict.cta.subtext}
           </p>
           
-          <button className="bg-turquesa text-mystic-navy font-bold px-6 py-4 rounded-xl flex items-center gap-3 w-fit hover:brightness-110 transition-all text-sm shadow-[0_0_20px_rgba(45,204,210,0.4)] hover:shadow-[0_0_30px_rgba(45,204,210,0.7)] hover:-translate-y-0.5 duration-300">
+          <a href="#contacto" className="bg-turquesa text-mystic-navy font-bold px-6 py-4 rounded-xl flex items-center gap-3 w-fit hover:brightness-110 transition-all text-sm shadow-[0_0_20px_rgba(45,204,210,0.4)] hover:shadow-[0_0_30px_rgba(45,204,210,0.7)] hover:-translate-y-0.5 duration-300">
             {dict.cta.button}
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
               <path d="M5 12h14"></path>
               <path d="m12 5 7 7-7 7"></path>
             </svg>
-          </button>
+          </a>
         </div>
 
       </div>

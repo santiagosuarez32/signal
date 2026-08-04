@@ -34,7 +34,7 @@ export default function Footer() {
   }, []);
 
   return (
-    <footer ref={footerRef} className="bg-black w-full flex flex-col items-center justify-between min-h-[100vh] relative pt-16 lg:pt-24 pb-8 px-6 lg:px-20 xl:px-24 z-20 text-white border-t border-white/10">
+    <footer id="contacto" ref={footerRef} className="bg-black w-full flex flex-col items-center justify-between min-h-[100vh] relative pt-16 lg:pt-24 pb-8 px-6 lg:px-20 xl:px-24 z-20 text-white border-t border-white/10">
       
       {/* Main Content */}
       <div className="w-full max-w-[1400px] flex flex-col lg:flex-row justify-between items-start lg:items-center gap-12 lg:gap-16 mb-auto flex-grow pb-12">

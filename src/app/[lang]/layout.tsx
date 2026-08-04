@@ -4,6 +4,7 @@ import "../globals.css";
 import SmoothScroll from "@/components/SmoothScroll";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import WhatsAppButton from "@/components/WhatsAppButton";
 import { TranslationProvider } from "@/components/TranslationProvider";
 import { getDictionary } from "@/dictionaries";
 
@@ -65,6 +66,7 @@ export default async function RootLayout({
             <Navbar />
             {children}
             <Footer />
+            <WhatsAppButton />
           </SmoothScroll>
         </TranslationProvider>
       </body>

@@ -4,6 +4,9 @@
     "description": "Agencia experta en marketing digital, publicidad online y posicionamiento."
   },
   "nav": {
+    "home": "Inicio",
+    "services": "Servicios",
+    "contact": "Contacto",
     "lang_es": "Español",
     "lang_en": "Inglés"
   },
@@ -11,15 +14,18 @@
     "badge": "Agencia de Marketing Digital y Publicidad",
     "title1": "Agencia de Marketing y",
     "title2": "Publicidad para marcas líderes.",
-    "subtitle1": "Impulsamos el crecimiento de tu negocio con",
-    "subtitle2": "estrategias de marketing digital, publicidad y branding."
+    "subtitle_part1": "Impulsamos el crecimiento de tu negocio con",
+    "subtitle_bold": "estrategias de marketing digital, publicidad y branding.",
+    "cta": "Agenda tu asesoría gratuita"
   },
   "experience": {
     "badge": "Método y experiencia",
     "heading_part1": "Nos enfocamos en",
     "heading_bold": "estrategias de marketing digital",
     "heading_part2": "orientadas a escalar tu negocio.",
-    "subtext": "Diseñamos campañas de publicidad, posicionamiento SEO y branding corporativo para conectar tu marca con su audiencia ideal y aumentar tus ventas."
+    "subtext_part1": "Diseñamos campañas de publicidad,",
+    "subtext_bold": "posicionamiento SEO y branding corporativo",
+    "subtext_part2": "para conectar tu marca con su audiencia ideal y aumentar tus ventas."
   },
   "about": {
     "greeting": "¡HOLA!",
@@ -138,5 +144,120 @@
       "no_countries": "No se encontraron países"
     },
     "copyright": "SIGNAL"
+  },
+  "services_page": {
+    "badge": "Estrategias Integrales",
+    "title_part1": "Soluciones de marketing diseñadas para",
+    "title_bold": "escalar tu negocio.",
+    "subtitle": "Combinamos creatividad, análisis de datos y tecnología para construir sistemas de adquisición rentables y sostenibles.",
+    "cta_button": "Agenda tu asesoría gratuita",
+    "cta_plans": "Ver planes de inversión",
+    "categories_title": "Nuestras Áreas de Especialización",
+    "categories_subtitle": "Cada servicio está optimizado para maximizar tu retorno de inversión y posicionar tu marca en el mercado.",
+    "cards": [
+      {
+        "id": "paid-ads",
+        "tag": "Performance Marketing",
+        "title": "Publicidad Digital & Paid Media",
+        "desc": "Campañas de alto rendimiento en Meta Ads, Google Ads y TikTok Ads enfocadas en generación de clientes potenciales y ventas directas.",
+        "features": [
+          "Estrategia y arquitectura de campañas",
+          "Creación de piezas creativas y copy",
+          "Optimización de ROAS y CPA",
+          "Retargeting avanzado y audiencias personalizadas"
+        ]
+      },
+      {
+        "id": "seo-content",
+        "tag": "Crecimiento Orgánico",
+        "title": "Posicionamiento SEO & Contenidos",
+        "desc": "Posicionamos tu sitio web en las primeras páginas de Google para captar tráfico altamente calificado sin depender solo de pauta.",
+        "features": [
+          "Auditoría SEO técnica y On-Page",
+          "Investigación de palabras clave estratégicas",
+          "Estrategia y redacción de contenidos",
+          "Construcción de autoridad y link building"
+        ]
+      },
+      {
+        "id": "branding",
+        "tag": "Identidad de Marca",
+        "title": "Branding & Diseño Corporativo",
+        "desc": "Construimos identidades visuales memorables que conectan emocionalmente con tu audiencia y elevan la percepción de tu negocio.",
+        "features": [
+          "Diseño de identidad de marca y logotipo",
+          "Manual de normas de marca",
+          "Diseño de piezas publicitarias",
+          "Estrategia de comunicación visual"
+        ]
+      },
+      {
+        "id": "funnels",
+        "tag": "Conversión",
+        "title": "Sistemas de Adquisición & Embudos",
+        "desc": "Diseñamos la estructura completa por la que transitan tus prospectos desde el primer contacto hasta convertirse en clientes recurrentes.",
+        "features": [
+          "Diseño de Landing Pages de alta conversión",
+          "Automatización de Email Marketing",
+          "Implementación de CRM y seguimiento",
+          "Optimización de tasa de conversión (CRO)"
+        ]
+      }
+    ],
+    "process": {
+      "badge": "Metodología comprobada",
+      "title": "Cómo trabajamos paso a paso",
+      "steps": [
+        {
+          "num": "01",
+          "title": "Diagnóstico & Auditoría",
+          "desc": "Analizamos la situación actual de tu negocio, tu competencia y tu embudo de ventas para identificar oportunidades."
+        },
+        {
+          "num": "02",
+          "title": "Estrategia a Medida",
+          "desc": "Diseñamos un plan de marketing personalizado alineado con tus objetivos de facturación y capacidad operativa."
+        },
+        {
+          "num": "03",
+          "title": "Ejecución & Lanzamiento",
+          "desc": "Producimos las piezas, configuramos las plataformas y lanzamos campañas optimizadas desde el día 1."
+        },
+        {
+          "num": "04",
+          "title": "Optimización & Escala",
+          "desc": "Monitoreamos métricas diariamente para iterar creativos, reducir costos por adquisición y escalar la inversión."
+        }
+      ]
+    }
+  },
+  "plans_table": {
+    "title": "Planes",
+    "col_features": "Características",
+    "val_up_to_3": "Hasta 3",
+    "val_limited": "Limitado",
+    "val_continuous": "Continuo",
+    "val_basic": "Básico",
+    "val_advanced": "Avanzado",
+    "features": [
+      "Diagnóstico del negocio",
+      "Diseño de estrategia publicitaria",
+      "Seteo inicial de campañas",
+      "Configuración de seguimiento",
+      "Creación de creativos iniciales",
+      "Gestión continua de campañas",
+      "Optimización de campañas",
+      "Rotación de anuncios",
+      "Testing de nuevos anuncios",
+      "Expansión de audiencias",
+      "Estrategia de escalado",
+      "Análisis avanzado de datos",
+      "Optimización del embudo de ventas"
+    ]
+  },
+  "whatsapp": {
+    "tooltip": "¡Hablemos por WhatsApp!",
+    "aria": "Contactar por WhatsApp",
+    "message": "Hola Signal, quiero consultar por sus servicios de marketing digital."
   }
 }

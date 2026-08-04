@@ -44,7 +44,7 @@ export default function ServicesCards() {
   ];
 
   return (
-    <section className="relative z-10 w-full pt-6 pb-16 bg-[#090c1f] text-white">
+    <section className="relative z-10 w-full pt-12 md:pt-16 pb-16 bg-[#090c1f] text-white">
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
         
         {/* Intro text */}

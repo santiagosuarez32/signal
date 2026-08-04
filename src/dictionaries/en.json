@@ -4,6 +4,9 @@
     "description": "Expert agency in digital marketing, online advertising, and positioning."
   },
   "nav": {
+    "home": "Home",
+    "services": "Services",
+    "contact": "Contact",
     "lang_es": "Spanish",
     "lang_en": "English"
   },
@@ -11,15 +14,18 @@
     "badge": "Digital Marketing & Advertising Agency",
     "title1": "Marketing and Advertising",
     "title2": "Agency for leading brands.",
-    "subtitle1": "We drive your business growth with",
-    "subtitle2": "digital marketing, advertising, and branding strategies."
+    "subtitle_part1": "We drive your business growth with",
+    "subtitle_bold": "digital marketing, advertising, and branding strategies.",
+    "cta": "Book your free consultation"
   },
   "experience": {
     "badge": "Method & Experience",
     "heading_part1": "We focus on",
     "heading_bold": "digital marketing strategies",
     "heading_part2": "aimed at scaling your business.",
-    "subtext": "We design advertising campaigns, SEO positioning, and corporate branding to connect your brand with its ideal audience and increase your sales."
+    "subtext_part1": "We design advertising campaigns,",
+    "subtext_bold": "SEO positioning and corporate branding",
+    "subtext_part2": "to connect your brand with its ideal audience and increase your sales."
   },
   "about": {
     "greeting": "HELLO!",
@@ -138,5 +144,120 @@
       "no_countries": "No countries found"
     },
     "copyright": "SIGNAL"
+  },
+  "services_page": {
+    "badge": "Comprehensive Strategies",
+    "title_part1": "Marketing solutions designed to",
+    "title_bold": "scale your business.",
+    "subtitle": "We combine creativity, data analysis, and technology to build profitable and sustainable acquisition systems.",
+    "cta_button": "Book your free consultation",
+    "cta_plans": "View investment plans",
+    "categories_title": "Our Areas of Expertise",
+    "categories_subtitle": "Each service is optimized to maximize your return on investment and position your brand in the market.",
+    "cards": [
+      {
+        "id": "paid-ads",
+        "tag": "Performance Marketing",
+        "title": "Digital Advertising & Paid Media",
+        "desc": "High-performance campaigns on Meta Ads, Google Ads, and TikTok Ads focused on lead generation and direct sales.",
+        "features": [
+          "Campaign strategy and architecture",
+          "Creative asset and copywriting production",
+          "ROAS and CPA optimization",
+          "Advanced retargeting and custom audiences"
+        ]
+      },
+      {
+        "id": "seo-content",
+        "tag": "Organic Growth",
+        "title": "SEO Positioning & Content",
+        "desc": "We rank your website on Google's first pages to attract highly qualified organic traffic.",
+        "features": [
+          "Technical & On-Page SEO audit",
+          "Strategic keyword research",
+          "Content strategy and copywriting",
+          "Authority building and link building"
+        ]
+      },
+      {
+        "id": "branding",
+        "tag": "Brand Identity",
+        "title": "Branding & Corporate Design",
+        "desc": "We build memorable visual identities that connect emotionally with your audience and elevate your business perception.",
+        "features": [
+          "Brand identity and logo design",
+          "Brand guidelines manual",
+          "Advertising graphics design",
+          "Visual communication strategy"
+        ]
+      },
+      {
+        "id": "funnels",
+        "tag": "Conversion",
+        "title": "Acquisition Systems & Funnels",
+        "desc": "We design the complete path your prospects take from first contact to becoming recurring customers.",
+        "features": [
+          "High-converting landing page design",
+          "Email marketing automation",
+          "CRM implementation & tracking",
+          "Conversion Rate Optimization (CRO)"
+        ]
+      }
+    ],
+    "process": {
+      "badge": "Proven Methodology",
+      "title": "How we work step by step",
+      "steps": [
+        {
+          "num": "01",
+          "title": "Diagnosis & Audit",
+          "desc": "We analyze your business's current state, competitors, and sales funnel to spot growth opportunities."
+        },
+        {
+          "num": "02",
+          "title": "Tailored Strategy",
+          "desc": "We design a custom marketing plan aligned with your revenue goals and operational capacity."
+        },
+        {
+          "num": "03",
+          "title": "Execution & Launch",
+          "desc": "We produce assets, set up platforms, and launch campaigns optimized from day 1."
+        },
+        {
+          "num": "04",
+          "title": "Optimization & Scaling",
+          "desc": "We monitor daily metrics to iterate creatives, lower acquisition costs, and scale investment."
+        }
+      ]
+    }
+  },
+  "plans_table": {
+    "title": "Plans",
+    "col_features": "Features",
+    "val_up_to_3": "Up to 3",
+    "val_limited": "Limited",
+    "val_continuous": "Continuous",
+    "val_basic": "Basic",
+    "val_advanced": "Advanced",
+    "features": [
+      "Business diagnosis",
+      "Advertising strategy design",
+      "Initial campaign setup",
+      "Tracking configuration",
+      "Creation of initial creatives",
+      "Ongoing campaign management",
+      "Campaign optimization",
+      "Ad rotation",
+      "Testing of new ads",
+      "Audience expansion",
+      "Scaling strategy",
+      "Advanced data analysis",
+      "Sales funnel optimization"
+    ]
+  },
+  "whatsapp": {
+    "tooltip": "Let's talk on WhatsApp!",
+    "aria": "Contact via WhatsApp",
+    "message": "Hello Signal, I would like to inquire about your digital marketing services."
   }
 }

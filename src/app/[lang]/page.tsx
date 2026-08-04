@@ -4,10 +4,7 @@ import { useEffect, useRef } from "react";
 import Script from "next/script";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import ServicesCards from "@/components/ServicesCards";
-import PlansTable from "@/components/PlansTable";
 import Testimonials from "@/components/Testimonials";
-import CtaSection from "@/components/CtaSection";
 import FaqSection from "@/components/FaqSection";
 import { useTranslation } from "@/components/TranslationProvider";
 gsap.registerPlugin(ScrollTrigger);
@@ -19,60 +16,79 @@ export default function Home() {
   const textRef = useRef<HTMLParagraphElement>(null);
   const textContainerRef = useRef<HTMLDivElement>(null);
   const ctaRef = useRef<HTMLDivElement>(null);
+  const buttonRef = useRef<HTMLDivElement>(null);
   const cardsRef = useRef<HTMLDivElement[]>([]);
 
   useEffect(() => {
     // Hero Animations
     const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
 
-    tl.fromTo(
-      titleRef.current,
-      { y: 60, opacity: 0 },
-      { y: 0, opacity: 1, duration: 1.2, delay: 0.2 }
-    )
-      .fromTo(
-        textRef.current,
-        { y: 30, opacity: 0 },
-        { y: 0, opacity: 1, duration: 1 },
-        "-=0.8"
-      )
-      .fromTo(
+    if (ctaRef.current) {
+      tl.fromTo(
         ctaRef.current,
         { y: 30, opacity: 0 },
-        { y: 0, opacity: 1, duration: 1 },
-        "-=0.8"
+        { y: 0, opacity: 1, duration: 0.8, delay: 0.2 }
       );
+    }
+    if (titleRef.current) {
+      tl.fromTo(
+        titleRef.current,
+        { y: 60, opacity: 0 },
+        { y: 0, opacity: 1, duration: 1 },
+        "-=0.6"
+      );
+    }
+    if (textRef.current) {
+      tl.fromTo(
+        textRef.current,
+        { y: 30, opacity: 0 },
+        { y: 0, opacity: 1, duration: 0.8 },
+        "-=0.6"
+      );
+    }
+    if (buttonRef.current) {
+      tl.fromTo(
+        buttonRef.current,
+        { y: 30, opacity: 0 },
+        { y: 0, opacity: 1, duration: 0.8 },
+        "-=0.6"
+      );
+    }
 
     // Hero Scroll Animation (Text parallax/fade)
-    gsap.to(textContainerRef.current, {
-      scale: 0.9,
-      y: -100,
-      opacity: 0,
-      scrollTrigger: {
-        trigger: heroRef.current,
-        start: "top top",
-        end: "bottom top",
-        scrub: true,
-      },
-    });
+    if (textContainerRef.current && heroRef.current) {
+      gsap.to(textContainerRef.current, {
+        scale: 0.9,
+        y: -100,
+        opacity: 0,
+        scrollTrigger: {
+          trigger: heroRef.current,
+          start: "top top",
+          end: "bottom top",
+          scrub: true,
+        },
+      });
+    }
 
     // Cards Scroll Animation
     cardsRef.current.forEach((card, index) => {
-      gsap.fromTo(
-        card,
-        { y: 100, opacity: 0 },
-        {
-          y: 0,
-          opacity: 1,
-          duration: 1,
-          ease: "power3.out",
-          scrollTrigger: {
-            trigger: card,
-            start: "top 85%",
-            toggleActions: "play none none reverse",
-          },
-        }
-      );
+      if (card) {
+        gsap.fromTo(
+          card,
+          { y: 100, opacity: 0 },
+          {
+            y: 0,
+            opacity: 1,
+            duration: 1,
+            ease: "power3.out",
+            scrollTrigger: {
+              trigger: card,
+              start: "top 85%",
+              toggleActions: "play none none reverse",
+            },
+          }
+        );
+      }
     });
 
     return () => {
@@ -116,7 +132,7 @@ export default function Home() {
               
               <h1
                 ref={titleRef}
-                className="text-3xl md:text-5xl lg:text-[4.15rem] font-extralight text-white leading-[1.15] tracking-tight mb-6"
+                className="text-3xl md:text-5xl lg:text-[4.15rem] font-normal text-white leading-[1.15] tracking-tight mb-6"
               >
                 {dict.hero.title1} <br className="hidden md:block" />
                 {dict.hero.title2}
@@ -124,10 +140,33 @@ export default function Home() {
 
               <p
                 ref={textRef}
-                className="max-w-[36rem] text-base md:text-lg text-white/80 font-extralight leading-relaxed"
+                className="max-w-[36rem] text-base md:text-lg text-slate-300 font-normal leading-relaxed font-sans"
               >
-                {dict.hero.subtitle1} <br className="hidden md:block" />{dict.hero.subtitle2}
+                {dict.hero.subtitle_part1} <strong className="font-semibold text-white">{dict.hero.subtitle_bold}</strong>
               </p>
+
+              <div ref={buttonRef} className="mt-8">
+                <a
+                  href="#contacto"
+                  className="bg-turquesa text-mystic-navy font-bold px-7 py-4 rounded-xl flex items-center gap-3 w-fit hover:bg-white hover:text-black transition-all text-sm md:text-base shadow-[0_0_25px_rgba(45,204,210,0.4)] hover:shadow-[0_0_35px_rgba(255,255,255,0.6)] hover:-translate-y-0.5 duration-300 group cursor-pointer"
+                >
+                  <span>{dict.hero.cta || "Agenda tu asesoría gratuita"}</span>
+                  <svg
+                    width="18"
+                    height="18"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className="transition-transform group-hover:translate-x-1"
+                  >
+                    <path d="M5 12h14"></path>
+                    <path d="m12 5 7 7-7 7"></path>
+                  </svg>
+                </a>
+              </div>
             </div>
           </div>
       </section>
@@ -143,13 +182,14 @@ export default function Home() {
         >
           {/* Badge */}
           <div
+            className="font-sans"
             style={{
               display: "inline-block",
               border: "1px solid var(--color-turquesa)",
               borderRadius: 20,
               padding: "8px 20px",
               fontSize: 14,
-              fontWeight: 400,
+              fontWeight: 500,
               marginBottom: 32,
               color: "var(--color-turquesa)",
               backgroundColor: "rgba(45, 204, 210, 0.08)",
@@ -159,23 +199,38 @@ export default function Home() {
           </div>
 
           {/* Heading */}
-          <h2 className="text-2xl md:text-4xl text-white leading-tight font-light mb-7">
+          <h2 className="text-2xl md:text-4xl lg:text-[2.75rem] text-white leading-tight font-light mb-7">
             {dict.experience.heading_part1} <strong className="font-extrabold text-turquesa">{dict.experience.heading_bold}</strong> {dict.experience.heading_part2}
           </h2>
 
           {/* Subtext */}
-          <p
-            style={{
-              fontSize: "clamp(1.05rem, 0.95rem + 0.5vw, 1.25rem)",
-              fontWeight: 300,
-              lineHeight: 1.6,
-              maxWidth: 640,
-              color: "#cbd5e1",
-              marginBottom: 60,
-            }}
-          >
-            {dict.experience.subtext}
+          <p className="font-sans text-lg md:text-xl text-slate-300 font-normal leading-relaxed max-w-[680px] mb-10">
+            {dict.experience.subtext_part1} <strong className="font-semibold text-white">{dict.experience.subtext_bold}</strong> {dict.experience.subtext_part2}
           </p>
+
+          {/* CTA Button */}
+          <div>
+            <a
+              href="#contacto"
+              className="font-sans bg-turquesa text-mystic-navy font-semibold px-7 py-4 rounded-2xl flex items-center gap-3 w-fit hover:bg-white hover:text-black transition-all text-base shadow-[0_0_25px_rgba(45,204,210,0.4)] hover:shadow-[0_0_35px_rgba(255,255,255,0.6)] hover:-translate-y-0.5 duration-300 group cursor-pointer"
+            >
+              <span>{dict.hero.cta || "Agenda tu asesoría gratuita"}</span>
+              <svg
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className="transition-transform group-hover:translate-x-1"
+              >
+                <path d="M5 12h14"></path>
+                <path d="m12 5 7 7-7 7"></path>
+              </svg>
+            </a>
+          </div>
         </div>
 
         {/* Marquee Logos */}
@@ -200,11 +255,11 @@ export default function Home() {
                 >
                   {[...Array(4)].map((_, rep) => (
                     <div key={rep} className="inline-flex items-center gap-6 md:gap-12 pr-6 md:pr-12">
-                      <img src="/marquee/1.png" alt="Brand 1" className="h-16 w-16 md:h-28 md:w-28 object-contain shrink-0" />
-                      <img src="/marquee/2.png" alt="Brand 2" className="h-16 w-16 md:h-28 md:w-28 object-contain shrink-0" />
-                      <img src="/marquee/3.png" alt="Brand 3" className="h-16 w-16 md:h-28 md:w-28 object-contain shrink-0" />
-                      <img src="/marquee/4.png" alt="Brand 4" className="h-16 w-16 md:h-28 md:w-28 object-contain shrink-0" />
-                      <img src="/marquee/5.png" alt="Brand 5" className="h-16 w-16 md:h-28 md:w-28 object-contain shrink-0" />
+                      <img src="/marquee/1.png" alt="Brand 1" className="h-16 w-16 md:h-28 md:w-28 object-contain shrink-0 filter grayscale brightness-125 opacity-80 hover:opacity-100 hover:grayscale-0 transition-all duration-300" />
+                      <img src="/marquee/2.png" alt="Brand 2" className="h-16 w-16 md:h-28 md:w-28 object-contain shrink-0 filter grayscale brightness-125 opacity-80 hover:opacity-100 hover:grayscale-0 transition-all duration-300" />
+                      <img src="/marquee/3.png" alt="Brand 3" className="h-16 w-16 md:h-28 md:w-28 object-contain shrink-0 filter grayscale brightness-125 opacity-80 hover:opacity-100 hover:grayscale-0 transition-all duration-300" />
+                      <img src="/marquee/4.png" alt="Brand 4" className="h-16 w-16 md:h-28 md:w-28 object-contain shrink-0 filter grayscale brightness-125 opacity-80 hover:opacity-100 hover:grayscale-0 transition-all duration-300" />
+                      <img src="/marquee/5.png" alt="Brand 5" className="h-16 w-16 md:h-28 md:w-28 object-contain shrink-0 filter grayscale brightness-125 opacity-80 hover:opacity-100 hover:grayscale-0 transition-all duration-300" />
                     </div>
                   ))}
                 </div>
@@ -238,12 +293,12 @@ export default function Home() {
               {/* Overlapping Heading */}
               <div className="mb-10 lg:absolute lg:top-10 lg:left-[-140px] z-10">
                 <p className="text-xl md:text-2xl text-turquesa font-semibold tracking-widest text-right pr-2">{dict.about.greeting}</p>
-                <h2 className="text-5xl md:text-6xl lg:text-[5.5rem] font-thin text-white tracking-tight leading-none whitespace-nowrap drop-shadow-lg">
+                <h2 className="text-5xl md:text-6xl lg:text-[5.5rem] font-medium text-white tracking-tight leading-none whitespace-nowrap drop-shadow-lg">
                   {dict.about.title}
                 </h2>
               </div>
 
-              <div className="lg:mt-48 space-y-8 text-lg md:text-[1.1rem] text-slate-300 leading-relaxed font-light">
+              <div className="lg:mt-48 space-y-8 text-lg md:text-[1.1rem] text-slate-300 leading-relaxed font-normal">
                 <p className="text-2xl md:text-3xl text-white leading-tight">
                   {dict.about.p1_part1} <strong className="font-extrabold text-turquesa">{dict.about.p1_bold}</strong> {dict.about.p1_part2} <strong className="font-extrabold text-white">{dict.about.p1_bold2}</strong>
                 </p>
@@ -268,9 +323,6 @@ export default function Home() {
         </div>
       </section>
 
-      <ServicesCards />
-      <PlansTable />
-
       <Testimonials />
 
       {/* Instagram Feed Section */}
@@ -279,7 +331,6 @@ export default function Home() {
         <div className="elfsight-app-38ccda90-6f49-45d9-a689-3b90377b8a85" data-elfsight-app-lazy></div>
       </section>
       <FaqSection />
-      <CtaSection />
 
       </div>
     </main>
