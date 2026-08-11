@@ -118,15 +118,15 @@ export default function Home() {
               loop 
               muted 
               playsInline 
-              className="absolute inset-0 w-full h-full object-cover opacity-40 mix-blend-luminosity"
+              className="absolute inset-0 w-full h-full object-cover opacity-50"
             />
             {/* Dark overlay to ensure text readability */}
-            <div className="absolute inset-0 bg-[#090c1f]/60" />
+            <div className="absolute inset-0 bg-black/60" />
           </div>
 
           <div ref={textContainerRef} className="relative z-10 w-full max-w-[1400px] mx-auto flex flex-col items-start justify-center pt-32 pb-20 px-8 md:px-16 lg:px-24 h-[100vh]">
             <div className="max-w-4xl flex flex-col items-start text-left">
-              <div ref={ctaRef} className="inline-block px-5 py-2 border border-white/40 rounded-[30px] text-white/90 text-[14px] font-light mb-6 backdrop-blur-sm">
+              <div ref={ctaRef} className="inline-block px-3 py-2 border border-white/40 rounded-[30px] text-white/90 text-[14px] font-light mb-6 backdrop-blur-sm">
                 {dict.hero.badge}
               </div>
               
@@ -140,15 +140,15 @@ export default function Home() {
 
               <p
                 ref={textRef}
-                className="max-w-[36rem] text-base md:text-lg text-slate-300 font-normal leading-relaxed font-sans"
+                className="max-w-[36rem] text-base md:text-lg text-slate-400 font-light leading-relaxed font-sans"
               >
-                {dict.hero.subtitle_part1} <strong className="font-semibold text-white">{dict.hero.subtitle_bold}</strong>
+                {dict.hero.subtitle_part1} <strong className="font-light text-slate-400">{dict.hero.subtitle_bold}</strong>
               </p>
 
               <div ref={buttonRef} className="mt-8">
                 <a
                   href="#contacto"
-                  className="bg-turquesa text-mystic-navy font-bold px-7 py-4 rounded-xl flex items-center gap-3 w-fit hover:bg-white hover:text-black transition-all text-sm md:text-base shadow-[0_0_25px_rgba(45,204,210,0.4)] hover:shadow-[0_0_35px_rgba(255,255,255,0.6)] hover:-translate-y-0.5 duration-300 group cursor-pointer"
+                  className="bg-mystic-navy text-white font-light text-xs md:text-sm px-6 py-3 rounded-xl flex items-center gap-3 w-fit hover:bg-white hover:text-black transition-all shadow-[0_0_25px_rgba(30,35,172,0.5)] hover:shadow-[0_0_35px_rgba(255,255,255,0.4)] hover:-translate-y-0.5 duration-300 group cursor-pointer"
                 >
                   <span>{dict.hero.cta || "Agenda tu asesoría gratuita"}</span>
                   <svg
@@ -181,38 +181,25 @@ export default function Home() {
           className="px-8 md:px-16 lg:px-24"
         >
           {/* Badge */}
-          <div
-            className="font-sans"
-            style={{
-              display: "inline-block",
-              border: "1px solid var(--color-turquesa)",
-              borderRadius: 20,
-              padding: "8px 20px",
-              fontSize: 14,
-              fontWeight: 500,
-              marginBottom: 32,
-              color: "var(--color-turquesa)",
-              backgroundColor: "rgba(45, 204, 210, 0.08)",
-            }}
-          >
+          <div className="inline-block px-3 py-2 border border-white/40 rounded-[30px] text-white/90 text-[14px] font-light mb-6 backdrop-blur-sm">
             {dict.experience.badge}
           </div>
 
           {/* Heading */}
-          <h2 className="text-2xl md:text-4xl lg:text-[2.75rem] text-white leading-tight font-light mb-7">
-            {dict.experience.heading_part1} <strong className="font-extrabold text-turquesa">{dict.experience.heading_bold}</strong> {dict.experience.heading_part2}
+          <h2 className="text-2xl md:text-4xl lg:text-[2.75rem] text-white leading-tight font-normal mb-7">
+            {dict.experience.heading_part1} <strong className="font-normal text-turquesa">{dict.experience.heading_bold}</strong> {dict.experience.heading_part2}
           </h2>
 
           {/* Subtext */}
-          <p className="font-sans text-lg md:text-xl text-slate-300 font-normal leading-relaxed max-w-[680px] mb-10">
-            {dict.experience.subtext_part1} <strong className="font-semibold text-white">{dict.experience.subtext_bold}</strong> {dict.experience.subtext_part2}
+          <p className="font-sans text-base md:text-lg text-slate-400 font-light leading-relaxed max-w-[680px] mb-10">
+            {dict.experience.subtext_part1} <strong className="font-light text-slate-400">{dict.experience.subtext_bold}</strong> {dict.experience.subtext_part2}
           </p>
 
           {/* CTA Button */}
           <div>
             <a
               href="#contacto"
-              className="font-sans bg-turquesa text-mystic-navy font-semibold px-7 py-4 rounded-2xl flex items-center gap-3 w-fit hover:bg-white hover:text-black transition-all text-base shadow-[0_0_25px_rgba(45,204,210,0.4)] hover:shadow-[0_0_35px_rgba(255,255,255,0.6)] hover:-translate-y-0.5 duration-300 group cursor-pointer"
+              className="bg-mystic-navy text-white font-light text-xs md:text-sm px-6 py-3 rounded-xl flex items-center gap-3 w-fit hover:bg-white hover:text-black transition-all shadow-[0_0_25px_rgba(30,35,172,0.5)] hover:shadow-[0_0_35px_rgba(255,255,255,0.4)] hover:-translate-y-0.5 duration-300 group cursor-pointer"
             >
               <span>{dict.hero.cta || "Agenda tu asesoría gratuita"}</span>
               <svg
@@ -272,7 +259,11 @@ export default function Home() {
 
 
       {/* About Section */}
-      <section className="relative z-10 w-full bg-[#090c1f] pt-16 pb-8 text-white">
+      <section className="relative z-10 w-full bg-[#090c1f] pt-16 pb-8 text-white overflow-hidden">
+
+        {/* Decorative Circles Background */}
+        <AboutCircles />
+
         <div className="max-w-6xl mx-auto px-6">
           <div className="flex flex-col lg:flex-row items-start gap-12 lg:gap-16">
             
@@ -300,7 +291,7 @@ export default function Home() {
 
               <div className="lg:mt-48 space-y-8 text-lg md:text-[1.1rem] text-slate-300 leading-relaxed font-normal">
                 <p className="text-2xl md:text-3xl text-white leading-tight">
-                  {dict.about.p1_part1} <strong className="font-extrabold text-turquesa">{dict.about.p1_bold}</strong> {dict.about.p1_part2} <strong className="font-extrabold text-white">{dict.about.p1_bold2}</strong>
+                  {dict.about.p1_part1} <span className="font-light text-turquesa">{dict.about.p1_bold}</span> {dict.about.p1_part2} <span className="font-light text-white">{dict.about.p1_bold2}</span>
                 </p>
                 
                 <p>
@@ -311,9 +302,9 @@ export default function Home() {
                   {dict.about.p3_part1} <strong className="font-semibold text-white">{dict.about.p3_bold}</strong> {dict.about.p3_part2} <strong className="font-semibold text-white">{dict.about.p3_bold2}</strong>{dict.about.p3_part3} <strong className="font-semibold text-white">{dict.about.p3_bold3}</strong>
                 </p>
                 
-                <div className="flex flex-col items-start gap-2 pt-2 font-bold text-white text-lg">
-                  <span className="bg-turquesa text-mystic-navy px-4 py-1.5 rounded-md inline-block shadow-md">{dict.about.pill1}</span>
-                  <span className="bg-mystic-navy text-white border border-white/20 px-4 py-1.5 rounded-md inline-block shadow-md">{dict.about.pill2}</span>
+                <div className="flex flex-col items-start gap-2 pt-2">
+                  <span className="inline-block px-3 py-2 border border-white/40 rounded-[30px] text-white/90 text-[14px] font-light backdrop-blur-sm">{dict.about.pill1}</span>
+                  <span className="inline-block px-3 py-2 border border-white/40 rounded-[30px] text-white/90 text-[14px] font-light backdrop-blur-sm">{dict.about.pill2}</span>
                 </div>
               </div>
 
@@ -334,5 +325,131 @@ export default function Home() {
 
       </div>
     </main>
+  );
+}
+
+function AboutCircles() {
+  const svgRef = useRef<SVGSVGElement>(null);
+
+  useEffect(() => {
+    if (!svgRef.current) return;
+    const circles = svgRef.current.querySelectorAll("circle");
+
+    circles.forEach((circle) => {
+      const length = circle.getTotalLength();
+      gsap.set(circle, { strokeDasharray: length, strokeDashoffset: length });
+    });
+
+    gsap.to(Array.from(circles), {
+      strokeDashoffset: 0,
+      duration: 2.4,
+      ease: "power2.inOut",
+      stagger: 0.4,
+      scrollTrigger: {
+        trigger: svgRef.current,
+        start: "top 85%",
+        toggleActions: "play none none reverse",
+      },
+    });
+  }, []);
+
+  return (
+    <svg
+      ref={svgRef}
+      className="absolute inset-0 w-full h-full pointer-events-none"
+      xmlns="http://www.w3.org/2000/svg"
+      aria-hidden="true"
+    >
+      {/* Large circle */}
+      <circle
+        cx="-20"
+        cy="60%"
+        r="280"
+        fill="none"
+        stroke="rgba(255,255,255,0.07)"
+        strokeWidth="1"
+      />
+      {/* Medium circle */}
+      <circle
+        cx="220"
+        cy="65%"
+        r="190"
+        fill="none"
+        stroke="rgba(255,255,255,0.08)"
+        strokeWidth="1"
+      />
+      {/* Small circle */}
+      <circle
+        cx="370"
+        cy="72%"
+        r="110"
+        fill="none"
+        stroke="rgba(255,255,255,0.09)"
+        strokeWidth="1"
+      />
+    </svg>
+  );
+}
+
+function TestimonialsCircles() {
+  const svgRef = useRef<SVGSVGElement>(null);
+
+  useEffect(() => {
+    if (!svgRef.current) return;
+    const circles = svgRef.current.querySelectorAll("circle");
+
+    circles.forEach((circle) => {
+      const length = circle.getTotalLength();
+      gsap.set(circle, { strokeDasharray: length, strokeDashoffset: length });
+    });
+
+    gsap.to(Array.from(circles), {
+      strokeDashoffset: 0,
+      duration: 2.4,
+      ease: "power2.inOut",
+      stagger: 0.4,
+      scrollTrigger: {
+        trigger: svgRef.current,
+        start: "top 85%",
+        toggleActions: "play none none reverse",
+      },
+    });
+  }, []);
+
+  return (
+    <svg
+      ref={svgRef}
+      className="absolute inset-0 w-full h-full pointer-events-none z-0"
+      xmlns="http://www.w3.org/2000/svg"
+      aria-hidden="true"
+    >
+      {/* Large circle - right edge */}
+      <circle
+        cx="105%"
+        cy="50%"
+        r="280"
+        fill="none"
+        stroke="rgba(255,255,255,0.07)"
+        strokeWidth="1"
+      />
+      {/* Medium circle */}
+      <circle
+        cx="88%"
+        cy="55%"
+        r="190"
+        fill="none"
+        stroke="rgba(255,255,255,0.08)"
+        strokeWidth="1"
+      />
+      {/* Small circle */}
+      <circle
+        cx="74%"
+        cy="62%"
+        r="110"
+        fill="none"
+        stroke="rgba(255,255,255,0.09)"
+        strokeWidth="1"
+      />
+    </svg>
   );
 }

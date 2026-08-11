@@ -65,14 +65,14 @@ export default function PhoneCountrySelect({ country, setCountry, loading = fals
   }, [showDropdown]);
 
   return (
-    <div className={`relative flex items-center w-full bg-[#0e1333]/90 border rounded-xl transition-all ${showDropdown ? 'border-turquesa ring-1 ring-turquesa' : 'border-white/20 focus-within:border-turquesa focus-within:ring-1 focus-within:ring-turquesa'}`}>
+    <div className={`relative flex items-center w-full bg-transparent border rounded-xl transition-all ${showDropdown ? 'border-turquesa ring-1 ring-turquesa' : 'border-white/40 focus-within:border-turquesa focus-within:ring-1 focus-within:ring-turquesa'}`}>
       <div className="flex items-center gap-2 pl-3 border-r border-white/15 bg-transparent shrink-0 relative" ref={dropdownRef}>
         <div 
           className="flex items-center gap-1.5 cursor-pointer py-3 pl-1 pr-2 hover:bg-white/10 rounded-lg transition-colors"
           onClick={() => !loading && setShowDropdown(!showDropdown)}
         >
           <img src={`https://flagcdn.com/w20/${country}.png`} alt={country} className="w-5 h-auto object-contain select-none" />
-          <span className="text-sm font-medium text-white select-none min-w-[32px] text-center">
+          <span className="text-sm font-light text-white select-none min-w-[32px] text-center">
             {COUNTRIES.find(c => c.code === country)?.prefix}
           </span>
           <svg className={`w-3.5 h-3.5 text-slate-400 transition-transform ${showDropdown ? "rotate-180" : ""}`} fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -81,14 +81,14 @@ export default function PhoneCountrySelect({ country, setCountry, loading = fals
         </div>
 
         {showDropdown && (
-          <div className="absolute top-[calc(100%+8px)] left-0 w-[260px] bg-[#0e1333] border border-white/20 rounded-xl shadow-2xl z-[100] flex flex-col overflow-hidden">
+          <div className="absolute top-[calc(100%+8px)] left-0 w-[260px] bg-[#0a0e29] border border-white/40 rounded-xl shadow-2xl z-[100] flex flex-col overflow-hidden">
             <div className="p-2 border-b border-white/15">
               <input
                 type="text"
                 placeholder={dict.footer.form.search_country}
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className="w-full px-3 py-2 text-sm bg-white/10 border border-transparent rounded-lg focus:outline-none focus:bg-white/20 focus:border-turquesa transition-all text-white placeholder:text-slate-400"
+                className="w-full px-3 py-2 text-sm bg-white/10 border border-transparent rounded-lg focus:outline-none focus:bg-white/20 focus:border-turquesa transition-all text-white placeholder:font-light placeholder:text-white/40"
                 onClick={(e) => e.stopPropagation()}
               />
             </div>
@@ -105,8 +105,8 @@ export default function PhoneCountrySelect({ country, setCountry, loading = fals
                     }}
                   >
                     <img src={`https://flagcdn.com/w20/${c.code}.png`} alt={c.name} className="w-5 h-auto object-contain shadow-sm rounded-sm" />
-                    <span className="text-sm font-medium text-white flex-1 truncate">{c.name}</span>
-                    <span className="text-xs font-semibold text-slate-400">{c.prefix}</span>
+                    <span className="text-sm font-light text-white flex-1 truncate">{c.name}</span>
+                    <span className="text-xs font-light text-slate-400">{c.prefix}</span>
                   </div>
                 ))
               ) : (
@@ -122,7 +122,7 @@ export default function PhoneCountrySelect({ country, setCountry, loading = fals
         name="telefono" 
         type="tel" 
         placeholder="11 4321 5678" 
-        className="flex-1 px-4 py-3 bg-transparent border-none text-white placeholder:text-slate-400 focus:outline-none focus:ring-0 text-base" 
+        className="flex-1 px-4 py-3 bg-transparent border-none text-white placeholder:font-light placeholder:text-white/40 focus:outline-none focus:ring-0 text-base" 
         required 
         minLength={8}
         disabled={loading} 

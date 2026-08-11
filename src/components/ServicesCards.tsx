@@ -1,3 +1,5 @@
+"use client";
+
 import React from 'react';
 import { useTranslation } from "@/components/TranslationProvider";
 
@@ -49,9 +51,9 @@ export default function ServicesCards() {
         
         {/* Intro text */}
         <div className="max-w-4xl mb-16">
-          <p className="text-2xl md:text-3xl text-white leading-tight font-light">
-            {dict.services.intro_part1} <strong className="font-extrabold text-turquesa">{dict.services.intro_bold}</strong> {dict.services.intro_part2}
-          </p>
+          <h2 className="text-2xl md:text-4xl font-normal leading-[1.2] tracking-tight text-white">
+            {dict.services.intro_part1} <span className="font-normal text-turquesa">{dict.services.intro_bold}</span> {dict.services.intro_part2}
+          </h2>
         </div>
 
         {/* Cards Grid */}
@@ -79,15 +81,39 @@ export default function ServicesCards() {
                 </div>
 
                 {/* Pills */}
-                <div className="flex flex-col gap-2 mb-8">
+                <div className="flex flex-col gap-2 mb-6">
                   {card.pills.map((pill: string, idx: number) => (
                     <div 
                       key={idx} 
-                      className={`${card.pillColor} rounded-full px-4 py-1.5 text-xs font-semibold shadow-sm w-fit`}
+                      className="border border-current/30 rounded-[30px] px-3 py-1.5 text-xs font-light backdrop-blur-sm w-fit bg-current/5"
                     >
                       {pill}
                     </div>
                   ))}
+                </div>
+
+                {/* Consultar precio button */}
+                <div className="mb-6">
+                  <a
+                    href="#contacto"
+                    className="bg-mystic-navy text-white font-light text-[11px] xl:text-xs px-4 py-2.5 rounded-xl inline-flex items-center gap-2 w-fit hover:bg-white hover:text-black transition-all shadow-[0_0_25px_rgba(30,35,172,0.5)] hover:shadow-[0_0_35px_rgba(255,255,255,0.4)] hover:-translate-y-0.5 duration-300 group cursor-pointer"
+                  >
+                    <span>{dict.plans?.cta_price || "Consultar precio de este plan"}</span>
+                    <svg
+                      width="14"
+                      height="14"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2.5"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      className="transition-transform group-hover:translate-x-0.5"
+                    >
+                      <path d="M5 12h14"></path>
+                      <path d="m12 5 7 7-7 7"></path>
+                    </svg>
+                  </a>
                 </div>
 
                 {/* Footer text */}

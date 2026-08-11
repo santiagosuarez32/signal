@@ -1,7 +1,12 @@
 {
   "metadata": {
-    "title": "Signal | Marketing and Advertising Agency",
-    "description": "Expert agency in digital marketing, online advertising, and positioning."
+    "title": "Signal Marketing | Digital Marketing & Advertising Agency",
+    "description": "Signal Marketing (signalmarketing.site) - Leading digital marketing agency specializing in Google Ads, Meta Ads, SEO, and performance growth for top brands.",
+    "keywords": "Signal Marketing, Signal Marketing Digital, signalmarketing.site, digital marketing agency, google ads agency, meta ads agency, signal agency"
+  },
+  "services_metadata": {
+    "title": "Services & Marketing Plans | Signal Marketing",
+    "description": "Explore Signal Marketing (signalmarketing.site) services: Google Ads plans, customer acquisition systems, social media management, and B2B marketing."
   },
   "nav": {
     "home": "Home",
@@ -53,6 +58,8 @@
     "intro_part2": "that scale with you."
   },
   "plans": {
+    "cta_price": "Consult price for this plan",
+    "cta_price_short": "Check price",
     "signal_silver": {
       "title": "Signal Silver",
       "subtext": "For businesses that want to start using digital advertising in a structured way.",
@@ -92,6 +99,101 @@
         "Scaling strategy"
       ],
       "footer": "The goal is to turn advertising into a scalable channel. Advertising becomes the real engine of growth for your business."
+    }
+  },
+  "google_ads_plans": {
+    "section_title": "Google Ads Plans",
+    "section_subtitle": "Search and ad strategies focused on acquiring high-intent customers on Google.",
+    "disclaimer": "Ad spend on Google Ads is not included and is paid directly to Google. The recommended budget is defined based on the goals, market, and competition of each business.",
+    "basic": {
+      "title": "Google Ads Basic Plan",
+      "badge": "Specialized Plan",
+      "ideal_for_label": "Ideal for:",
+      "ideal_for": "Businesses that want to start generating leads or sales through Google.",
+      "includes_label": "Includes:",
+      "includes": [
+        "Keyword research.",
+        "Setup of up to 1 campaign in Google Ads.",
+        "Up to 2 ad groups.",
+        "Creation of optimized ads.",
+        "Basic conversion tracking setup.",
+        "Weekly optimization.",
+        "Negative keyword exclusion.",
+        "Budget monitoring.",
+        "Monthly report with results and recommendations.",
+        "Monthly follow-up meeting (30 minutes).",
+        "WhatsApp support."
+      ],
+      "recommended_for_label": "Recommended for:",
+      "recommended_for": [
+        "Local businesses.",
+        "Independent professionals.",
+        "Businesses starting out with Google Ads."
+      ],
+      "cta": "Inquire about this plan"
+    },
+    "scaled": {
+      "title": "Google Ads Scaling Plan",
+      "badge": "Advanced Plan",
+      "ideal_for_label": "Ideal for:",
+      "ideal_for": "Businesses looking to increase customer volume and continuously optimize their ad spend.",
+      "includes_label": "Includes:",
+      "includes": [
+        "Advanced keyword research and competitor analysis.",
+        "Setup of up to 4 campaigns (Search, Performance Max, Remarketing, and Brand, based on strategy).",
+        "Up to 10 ad groups.",
+        "Continuous ad creation and optimization.",
+        "Full conversion and event tracking setup.",
+        "Google Analytics 4 & Google Tag Manager integration (if applicable).",
+        "Bid, audience, and targeting optimization.",
+        "Remarketing list implementation.",
+        "Twice-weekly optimization.",
+        "A/B ad testing.",
+        "Detailed monthly report with metrics and growth opportunities.",
+        "Monthly strategic meeting (60 minutes).",
+        "Priority WhatsApp support."
+      ],
+      "recommended_for_label": "Recommended for:",
+      "recommended_for": [
+        "Growing companies.",
+        "E-commerce stores.",
+        "Clinics, construction firms, and businesses with higher ad budgets."
+      ],
+      "cta": "Inquire about this plan"
+    }
+  },
+  "complementary_services": {
+    "badge": "Extra Services",
+    "title": "Complementary Services",
+    "subtitle": "Additional solutions to boost your brand's reach, trust, and commercial growth.",
+    "social": {
+      "title": "Social Media Management",
+      "description": "Monthly plans designed for companies looking to strengthen their digital presence through content strategy, design, planning, and management focused on building trust, reach, and sales."
+    },
+    "video": {
+      "title": "Professional Video Production",
+      "description": "Creation of advertising and corporate videos with professional recording and editing for Meta Ads, Google Ads campaigns, social media, and branded content."
+    },
+    "b2b": {
+      "title": "B2B Marketing for Companies",
+      "description": "Specialized strategies for companies selling to other businesses (B2B). We design systems to generate business opportunities through Google Ads, Meta Ads, and campaigns focused on capturing high-quality leads via email marketing.",
+      "targets_label": "Specialized for:",
+      "targets": [
+        "Software companies (SaaS).",
+        "Consulting firms.",
+        "Technology companies.",
+        "Service businesses.",
+        "Corporate solutions."
+      ]
+    },
+    "consulting": {
+      "title": "Digital Marketing Consulting",
+      "description": "Personalized advisory services for companies wishing to optimize their digital strategy, improve campaign performance, and maximize results."
+    },
+    "custom_solution": {
+      "title": "Looking for a custom solution?",
+      "description": "Contact us and we will prepare a personalized proposal tailored to your company's needs and goals.",
+      "cta": "Contact Us Now"
     }
   },
   "faq": {
@@ -254,6 +356,38 @@
       "Advanced data analysis",
       "Sales funnel optimization"
     ]
+  },
+  "privacy_policy": {
+    "title": "Privacy Policy",
+    "subtitle": "Information about how we handle and protect your personal data in our forms and platforms.",
+    "intro": "At Signal Marketing, we take your data privacy very seriously. Below, we detail how we handle the information you share with us through our contact forms, meeting calendars, and advertising campaigns.",
+    "sections": [
+      {
+        "title": "1. Information We Collect",
+        "content": "Through our contact forms and channels, we collect the following information: First and last name, Company name, Contact phone number (with international prefix), Description of your business or project, and link to your website and/or social media."
+      },
+      {
+        "title": "2. Meeting Scheduler (Calendly)",
+        "content": "To facilitate coordinating consultations and meetings, we integrate Calendly on our website. When scheduling a date and time, the data entered is managed in accordance with Calendly's privacy policies for the sole purpose of coordinating and scheduling the call."
+      },
+      {
+        "title": "3. Purpose of Data Processing",
+        "content": "We use the collected information solely to: Contact you to answer your inquiries, analyze the feasibility of your projects prior to our meeting, prepare customized business proposals, and follow up on your service request."
+      },
+      {
+        "title": "4. Cookies and Advertising (Google Ads & Meta Ads)",
+        "content": "This website uses tracking technologies and third-party cookies (such as Google Analytics, Google Ads, and Meta Pixel) to measure the performance of our advertising campaigns and understand how users interact with our site. We do not share direct personal contact information with these networks."
+      },
+      {
+        "title": "5. Data Retention and Security",
+        "content": "Your personal data is not sold, rented, or shared with third parties for commercial purposes. It is stored securely and confidentially in our internal customer management systems. We will retain it only for as long as necessary to fulfill the business relationship."
+      },
+      {
+        "title": "6. Your Rights",
+        "content": "At any time, you can request access to, rectification, or deletion of your personal data by contacting us through any of our communication channels or by replying to our emails."
+      }
+    ],
+    "back_to_home": "Back to home"
   },
   "whatsapp": {
     "tooltip": "Let's talk on WhatsApp!",

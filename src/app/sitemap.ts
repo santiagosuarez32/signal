@@ -2,55 +2,74 @@ import { MetadataRoute } from 'next';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://signalmarketing.site';
+  const now = new Date();
 
   return [
     {
-      url: `${baseUrl}/es`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 1,
+      url: baseUrl,
+      lastModified: now,
+      changeFrequency: 'daily',
+      priority: 1.0,
       alternates: {
         languages: {
           es: `${baseUrl}/es`,
           en: `${baseUrl}/en`,
+          'x-default': `${baseUrl}/es`,
+        },
+      },
+    },
+    {
+      url: `${baseUrl}/es`,
+      lastModified: now,
+      changeFrequency: 'daily',
+      priority: 1.0,
+      alternates: {
+        languages: {
+          es: `${baseUrl}/es`,
+          en: `${baseUrl}/en`,
+          'x-default': `${baseUrl}/es`,
         },
       },
     },
     {
       url: `${baseUrl}/en`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 1,
+      lastModified: now,
+      changeFrequency: 'daily',
+      priority: 0.9,
       alternates: {
         languages: {
           es: `${baseUrl}/es`,
           en: `${baseUrl}/en`,
+          'x-default': `${baseUrl}/es`,
         },
       },
     },
     {
       url: `${baseUrl}/es/servicios`,
-      lastModified: new Date(),
+      lastModified: now,
       changeFrequency: 'weekly',
       priority: 0.9,
       alternates: {
         languages: {
           es: `${baseUrl}/es/servicios`,
           en: `${baseUrl}/en/servicios`,
+          'x-default': `${baseUrl}/es/servicios`,
         },
       },
     },
     {
       url: `${baseUrl}/en/servicios`,
-      lastModified: new Date(),
+      lastModified: now,
       changeFrequency: 'weekly',
-      priority: 0.9,
+      priority: 0.8,
       alternates: {
         languages: {
           es: `${baseUrl}/es/servicios`,
           en: `${baseUrl}/en/servicios`,
+          'x-default': `${baseUrl}/es/servicios`,
         },
       },
     },
   ];
 }
+

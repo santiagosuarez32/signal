@@ -1,3 +1,5 @@
+"use client";
+
 import React from 'react';
 import { Check, X } from 'lucide-react';
 import { useTranslation } from "@/components/TranslationProvider";
@@ -26,7 +28,7 @@ export default function PlansTable() {
   const renderValue = (value: string | boolean) => {
     if (value === true) return <Check className="w-3.5 h-3.5 sm:w-5 sm:h-5 md:w-6 md:h-6 text-turquesa mx-auto" strokeWidth={3} />;
     if (value === false) return <X className="w-3.5 h-3.5 sm:w-5 sm:h-5 md:w-6 md:h-6 text-slate-500/50 mx-auto" strokeWidth={3} />;
-    return <span className="text-[9px] sm:text-xs md:text-base font-semibold text-white leading-none">{value}</span>;
+    return <span className="text-[9px] sm:text-xs md:text-sm font-light text-slate-300 leading-none">{value}</span>;
   };
 
   return (
@@ -35,8 +37,8 @@ export default function PlansTable() {
         
         {/* Title */}
         <div className="flex flex-col md:flex-row justify-between items-center mb-6 md:mb-12">
-          <h2 className="text-3xl md:text-6xl font-black text-white uppercase tracking-tighter text-center md:text-left">
-            {pt.title || "PLANES"}
+          <h2 className="text-2xl md:text-4xl font-normal leading-[1.2] tracking-tight text-white mb-3 normal-case">
+            {pt.title || "Planes"}
           </h2>
         </div>
 
@@ -44,17 +46,17 @@ export default function PlansTable() {
         <div className="w-full">
           
           {/* Header */}
-          <div className="grid grid-cols-4 bg-[#1e23ac] border border-white/15 text-white rounded-xl sm:rounded-2xl py-2.5 sm:py-4 px-2 sm:px-4 md:px-8 mb-2 sm:mb-4 items-center shadow-lg">
-            <div className="col-span-1 font-bold text-[9px] sm:text-xs md:text-xl uppercase tracking-tight sm:tracking-wider">
-              {pt.col_features || "CARACTERÍSTICAS"}
+          <div className="grid grid-cols-4 bg-mystic-navy/40 border border-white/15 text-white rounded-xl sm:rounded-2xl py-2.5 sm:py-4 px-2 sm:px-4 md:px-8 mb-2 sm:mb-4 items-center shadow-lg">
+            <div className="col-span-1 font-light text-[9px] sm:text-xs md:text-base text-slate-300 normal-case">
+              {pt.col_features || "Características"}
             </div>
-            <div className="col-span-1 text-center font-bold text-[9px] sm:text-xs md:text-xl tracking-tight sm:tracking-wider bg-clip-text text-transparent bg-gradient-to-br from-slate-200 via-slate-300 to-slate-400">
+            <div className="col-span-1 text-center font-light text-[9px] sm:text-xs md:text-base tracking-normal text-slate-200">
               <span className="hidden sm:inline">Signal </span>Silver
             </div>
-            <div className="col-span-1 text-center font-bold text-[9px] sm:text-xs md:text-xl tracking-tight sm:tracking-wider bg-clip-text text-transparent bg-gradient-to-br from-amber-500 via-[#cd7f32] to-amber-700">
+            <div className="col-span-1 text-center font-light text-[9px] sm:text-xs md:text-base tracking-normal text-amber-500">
               <span className="hidden sm:inline">Signal </span>Bronze
             </div>
-            <div className="col-span-1 text-center font-bold text-[9px] sm:text-xs md:text-xl tracking-tight sm:tracking-wider bg-clip-text text-transparent bg-gradient-to-br from-yellow-300 via-[#e8b923] to-yellow-600">
+            <div className="col-span-1 text-center font-light text-[9px] sm:text-xs md:text-base tracking-normal text-yellow-500">
               <span className="hidden sm:inline">Signal </span>Gold
             </div>
           </div>
@@ -64,9 +66,9 @@ export default function PlansTable() {
             {features.map((feature, idx) => (
               <div 
                 key={idx} 
-                className="grid grid-cols-4 items-center py-2 sm:py-3.5 px-2 sm:px-4 md:px-8 border-b border-white/10 bg-[#0e1333]/60 rounded-lg sm:rounded-xl hover:bg-[#0e1333] transition-colors"
+                className="grid grid-cols-4 items-center py-2 sm:py-3.5 px-2 sm:px-4 md:px-8 border-b border-white/10 bg-black/40 rounded-lg sm:rounded-xl hover:bg-[#0e1333]/40 transition-colors"
               >
-                <div className="col-span-1 font-medium text-slate-200 text-[9px] sm:text-xs md:text-base leading-tight pr-1 sm:pr-4">
+                <div className="col-span-1 font-light text-slate-300 text-[9px] sm:text-xs md:text-base leading-tight pr-1 sm:pr-4">
                   {feature.name}
                 </div>
                 <div className="col-span-1 text-center">
@@ -80,6 +82,37 @@ export default function PlansTable() {
                 </div>
               </div>
             ))}
+          </div>
+
+          {/* Action Row */}
+          <div className="grid grid-cols-4 items-center py-4 px-2 sm:px-4 md:px-8 border border-white/15 bg-black/60 rounded-xl mt-4 shadow-lg">
+            <div className="col-span-1 font-light text-[9px] sm:text-xs md:text-sm text-slate-400 normal-case">
+              {dict.plans?.cta_price_short || "Consultar precio"}
+            </div>
+            <div className="col-span-1 text-center px-1">
+              <a
+                href="#contacto"
+                className="bg-mystic-navy text-white font-light px-2 py-1.5 sm:px-4 sm:py-2 rounded-xl inline-flex items-center justify-center shadow-[0_0_15px_rgba(30,35,172,0.4)] hover:bg-white hover:text-black transition-all text-[9px] sm:text-xs md:text-sm cursor-pointer border border-white/10"
+              >
+                <span>{dict.plans?.cta_price_short || "Consultar precio"}</span>
+              </a>
+            </div>
+            <div className="col-span-1 text-center px-1">
+              <a
+                href="#contacto"
+                className="bg-mystic-navy text-white font-light px-2 py-1.5 sm:px-4 sm:py-2 rounded-xl inline-flex items-center justify-center shadow-[0_0_15px_rgba(30,35,172,0.4)] hover:bg-white hover:text-black transition-all text-[9px] sm:text-xs md:text-sm cursor-pointer border border-white/10"
+              >
+                <span>{dict.plans?.cta_price_short || "Consultar precio"}</span>
+              </a>
+            </div>
+            <div className="col-span-1 text-center px-1">
+              <a
+                href="#contacto"
+                className="bg-mystic-navy text-white font-light px-2 py-1.5 sm:px-4 sm:py-2 rounded-xl inline-flex items-center justify-center shadow-[0_0_15px_rgba(30,35,172,0.4)] hover:bg-white hover:text-black transition-all text-[9px] sm:text-xs md:text-sm cursor-pointer border border-white/10"
+              >
+                <span>{dict.plans?.cta_price_short || "Consultar precio"}</span>
+              </a>
+            </div>
           </div>
 
         </div>

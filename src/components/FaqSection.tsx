@@ -1,120 +1,191 @@
 "use client";
 
-import React, { useState, useRef, useEffect } from 'react';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import React, { useState, useRef, useEffect } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { Plus, ChevronDown, ChevronUp } from "lucide-react";
 import { useTranslation } from "@/components/TranslationProvider";
 
 gsap.registerPlugin(ScrollTrigger);
 
-export default function FaqSection() {
-  const { dict } = useTranslation();
-  const faqs = dict.faq.items as { q: string, a: string }[];
-  
-  const [openIndex, setOpenIndex] = useState<number | null>(null);
-  const containerRef = useRef<HTMLDivElement>(null);
-  const headerRef = useRef<HTMLDivElement>(null);
-  const faqRefs = useRef<(HTMLDivElement | null)[]>([]);
+interface FAQItemProps {
+  faq: { q: string; a: string };
+  isOpen: boolean;
+  onClick: () => void;
+}
+
+function FAQItem({ faq, isOpen, onClick }: FAQItemProps) {
+  const contentRef = useRef<HTMLDivElement>(null);
+  const iconRef = useRef<HTMLDivElement>(null);
+  const isFirstRender = useRef(true);
 
   useEffect(() => {
-    if (headerRef.current) {
-      gsap.fromTo(
-        headerRef.current,
-        { y: 30, opacity: 0 },
-        {
-          y: 0,
-          opacity: 1,
-          duration: 0.8,
-          ease: "power3.out",
-          scrollTrigger: {
-            trigger: headerRef.current,
-            start: "top 85%",
-          }
-        }
-      );
+    if (!iconRef.current || !contentRef.current) return;
+
+    gsap.to(iconRef.current, {
+      rotate: isOpen ? 45 : 0,
+      backgroundColor: isOpen ? "rgba(45,204,210,0.15)" : "rgba(255,255,255,0)",
+      duration: 0.4,
+      ease: "power2.out",
+    });
+
+    if (isFirstRender.current) {
+      isFirstRender.current = false;
+      if (isOpen) {
+        gsap.set(contentRef.current, { height: "auto", opacity: 1, marginTop: 12 });
+      } else {
+        gsap.set(contentRef.current, { height: 0, opacity: 0, marginTop: 0 });
+      }
+      return;
     }
 
-    faqRefs.current.forEach((el, index) => {
-      if (el) {
-        gsap.fromTo(
-          el,
-          { y: 20, opacity: 0 },
-          {
-            y: 0,
-            opacity: 1,
-            duration: 0.6,
-            delay: index * 0.1,
-            ease: "power2.out",
-            scrollTrigger: {
-              trigger: el,
-              start: "top 90%",
-            }
-          }
-        );
+    if (isOpen) {
+      gsap.to(contentRef.current, {
+        height: "auto",
+        opacity: 1,
+        marginTop: 12,
+        duration: 0.45,
+        ease: "power3.out",
+      });
+    } else {
+      gsap.to(contentRef.current, {
+        height: 0,
+        opacity: 0,
+        marginTop: 0,
+        duration: 0.35,
+        ease: "power3.in",
+      });
+    }
+  }, [isOpen]);
+
+  return (
+    <div
+      className={`overflow-hidden rounded-2xl border px-5 py-4 transition-colors duration-300 md:px-6 ${
+        isOpen
+          ? "border-white/15 bg-white/5"
+          : "border-white/8 bg-white/[0.02] hover:bg-white/[0.04]"
+      }`}
+    >
+      <button
+        onClick={onClick}
+        type="button"
+        className="w-full flex justify-between items-center text-left focus:outline-none group cursor-pointer"
+      >
+        <h3 className="pr-8 text-[15px] font-light leading-snug tracking-tight text-white/85 transition-colors group-hover:text-white md:text-[16px]">
+          {faq.q}
+        </h3>
+        <div
+          ref={iconRef}
+          className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-white/20 text-white/70 transition-colors"
+        >
+          <Plus strokeWidth={1.5} className="h-4 w-4" />
+        </div>
+      </button>
+
+      <div
+        ref={contentRef}
+        className="overflow-hidden"
+        style={{ height: 0, opacity: 0, marginTop: 0 }}
+      >
+        <div className="max-w-3xl pr-4 text-[13px] leading-relaxed text-slate-400 md:pr-12 md:text-[14px] font-light whitespace-pre-line">
+          {faq.a}
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export default function FaqSection() {
+  const { dict } = useTranslation();
+  const faqs = dict.faq.items as { q: string; a: string }[];
+
+  const [openIdx, setOpenIdx] = useState<number | null>(0);
+  const [showAll, setShowAll] = useState(false);
+  const sectionRef = useRef<HTMLElement>(null);
+  const headerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (!headerRef.current) return;
+    gsap.fromTo(
+      headerRef.current,
+      { y: 30, opacity: 0 },
+      {
+        y: 0,
+        opacity: 1,
+        duration: 0.8,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: headerRef.current,
+          start: "top 85%",
+        },
       }
-    });
+    );
   }, []);
 
-  const toggleOpen = (index: number) => {
-    setOpenIndex(openIndex === index ? null : index);
+  const visibleFaqs = showAll ? faqs : faqs.slice(0, 5);
+
+  const toggleShowAll = () => {
+    if (showAll) {
+      if (openIdx !== null && openIdx >= 5) setOpenIdx(null);
+      setShowAll(false);
+      sectionRef.current?.scrollIntoView({ behavior: "smooth" });
+    } else {
+      setShowAll(true);
+    }
   };
 
   return (
-    <section ref={containerRef} className="relative w-full py-24 bg-[#090c1f] text-white">
-      <div className="max-w-[800px] mx-auto px-6 lg:px-12">
-        
+    <section
+      ref={sectionRef}
+      id="faq"
+      className="relative w-full overflow-hidden bg-[#090c1f] px-6 py-20 text-white md:py-28 lg:px-24"
+    >
+      <div className="w-full max-w-[800px] mx-auto">
+
         {/* Header */}
-        <div ref={headerRef} className="mb-16 text-center">
-          <h2 className="text-3xl md:text-5xl font-extralight tracking-tight mb-4 text-white">
-            {dict.faq.title_part1} <strong className="font-semibold text-turquesa">{dict.faq.title_bold}</strong>
+        <div ref={headerRef} className="mb-10 text-left md:mb-12">
+          <h2 className="text-3xl md:text-5xl font-normal leading-[1.15] tracking-tight text-white mb-4">
+            {dict.faq.title_part1}{" "}
+            <span className="text-turquesa font-normal">{dict.faq.title_bold}</span>
           </h2>
-          <p className="text-lg text-slate-300 font-light max-w-xl mx-auto">
+          <p className="max-w-xl text-base md:text-lg leading-relaxed text-slate-400 font-light">
             {dict.faq.subtitle}
           </p>
         </div>
 
         {/* FAQ List */}
-        <div className="flex flex-col border-t border-white/10">
-          {faqs.map((faq, idx) => {
-            const isOpen = openIndex === idx;
-            return (
-              <div 
-                key={idx} 
-                ref={(el) => { faqRefs.current[idx] = el; }}
-                className="border-b border-white/10 group"
-              >
-                <button
-                  onClick={() => toggleOpen(idx)}
-                  className="w-full flex justify-between items-center py-6 md:py-8 text-left focus:outline-none transition-colors hover:text-turquesa"
-                >
-                  <span className="text-lg md:text-xl font-medium pr-8 transition-colors duration-300 text-white group-hover:text-turquesa">
-                    {faq.q}
-                  </span>
-                  <div className={`flex-shrink-0 w-8 h-8 flex items-center justify-center rounded-full border transition-all duration-300 ${isOpen ? 'border-turquesa bg-turquesa text-[#090c1f] rotate-45' : 'border-white/20 text-white group-hover:border-turquesa group-hover:text-turquesa'}`}>
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                      <path d="M12 5v14"></path>
-                      <path d="M5 12h14"></path>
-                    </svg>
-                  </div>
-                </button>
-                
-                {/* Answer with CSS Grid animation */}
-                <div 
-                  className={`grid transition-all duration-300 ease-in-out ${
-                    isOpen ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"
-                  }`}
-                >
-                  <div className="overflow-hidden">
-                    <p className="text-base md:text-lg text-slate-300 font-light leading-relaxed pb-6 md:pb-8 pr-12">
-                      {faq.a}
-                    </p>
-                  </div>
-                </div>
-              </div>
-            );
-          })}
+        <div className="flex flex-col gap-2.5">
+          {visibleFaqs.map((faq, idx) => (
+            <FAQItem
+              key={faq.q}
+              faq={faq}
+              isOpen={openIdx === idx}
+              onClick={() => setOpenIdx(openIdx === idx ? null : idx)}
+            />
+          ))}
         </div>
-        
+
+        {/* Toggle button */}
+        {faqs.length > 5 && (
+          <div className="mt-8 flex justify-center">
+            <button
+              type="button"
+              onClick={toggleShowAll}
+              className="group flex items-center gap-2 px-6 py-3 rounded-full border border-white/15 bg-white/[0.03] text-white/70 text-sm font-light hover:bg-white hover:text-black transition-all duration-300 cursor-pointer"
+            >
+              <span>
+                {showAll
+                  ? "Ver menos preguntas"
+                  : `Ver todas las preguntas (${faqs.length})`}
+              </span>
+              {showAll ? (
+                <ChevronUp className="w-4 h-4 opacity-60 group-hover:opacity-100 transition-opacity" />
+              ) : (
+                <ChevronDown className="w-4 h-4 opacity-60 group-hover:opacity-100 transition-opacity" />
+              )}
+            </button>
+          </div>
+        )}
       </div>
     </section>
   );

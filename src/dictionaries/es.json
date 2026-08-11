@@ -1,7 +1,12 @@
 {
   "metadata": {
-    "title": "Signal | Agencia de Marketing y Publicidad",
-    "description": "Agencia experta en marketing digital, publicidad online y posicionamiento."
+    "title": "Signal Marketing | Agencia de Marketing Digital y Publicidad",
+    "description": "Signal Marketing (signalmarketing.site) - Agencia experta en marketing digital, publicidad en Google Ads y Meta Ads, posicionamiento SEO y estrategias de rendimiento para escalar marcas.",
+    "keywords": "Signal Marketing, Signal Marketing Digital, signalmarketing.site, agencia de marketing digital, publicidad en google ads, meta ads, agencia de publicidad, signal agencia"
+  },
+  "services_metadata": {
+    "title": "Servicios y Planes | Signal Marketing",
+    "description": "Explora los planes de Google Ads, sistemas de adquisición de clientes, gestión de redes sociales y servicios B2B de Signal Marketing (signalmarketing.site)."
   },
   "nav": {
     "home": "Inicio",
@@ -53,6 +58,8 @@
     "intro_part2": "que escalan contigo."
   },
   "plans": {
+    "cta_price": "Consultar precio de este plan",
+    "cta_price_short": "Consultar precio",
     "signal_silver": {
       "title": "Signal Silver",
       "subtext": "Para negocios que quieren comenzar a usar publicidad digital de forma estructurada.",
@@ -92,6 +99,101 @@
         "Estrategia de escalado"
       ],
       "footer": "El objetivo es convertir la publicidad en un canal escalable. La publicidad se convierte en el motor real de crecimiento de tu negocio."
+    }
+  },
+  "google_ads_plans": {
+    "section_title": "Planes de Google Ads",
+    "section_subtitle": "Estrategias de búsqueda y anuncios enfocados en captar clientes con alta intención de compra.",
+    "disclaimer": "La inversión publicitaria en Google Ads no está incluida y se paga directamente a Google. El presupuesto recomendado se define de acuerdo con los objetivos, el mercado y la competencia de cada negocio.",
+    "basic": {
+      "title": "Plan Google Ads Básico",
+      "badge": "Plan Especializado",
+      "ideal_for_label": "Ideal para:",
+      "ideal_for": "Empresas que quieren comenzar a generar clientes potenciales o ventas a través de Google.",
+      "includes_label": "Incluye:",
+      "includes": [
+        "Investigación de palabras clave.",
+        "Configuración de hasta 1 campaña en Google Ads.",
+        "Hasta 2 grupos de anuncios.",
+        "Creación de anuncios optimizados.",
+        "Configuración de conversiones básicas.",
+        "Optimización semanal.",
+        "Exclusión de palabras clave negativas.",
+        "Monitoreo del presupuesto.",
+        "Informe mensual con resultados y recomendaciones.",
+        "Reunión mensual de seguimiento (30 minutos).",
+        "Soporte por WhatsApp."
+      ],
+      "recommended_for_label": "Recomendado para:",
+      "recommended_for": [
+        "Negocios locales.",
+        "Profesionales independientes.",
+        "Empresas que están iniciando con Google Ads."
+      ],
+      "cta": "Consultar precio de este plan"
+    },
+    "scaled": {
+      "title": "Plan Google Ads Escalado",
+      "badge": "Plan Avanzado",
+      "ideal_for_label": "Ideal para:",
+      "ideal_for": "Empresas que buscan aumentar su volumen de clientes y optimizar continuamente su inversión.",
+      "includes_label": "Incluye:",
+      "includes": [
+        "Investigación avanzada de palabras clave y análisis de la competencia.",
+        "Configuración de hasta 4 campañas (Búsqueda, Performance Max, Remarketing y Marca, según la estrategia).",
+        "Hasta 10 grupos de anuncios.",
+        "Creación y optimización continua de anuncios.",
+        "Configuración completa de conversiones y eventos.",
+        "Integración con Google Analytics 4 y Google Tag Manager (si aplica).",
+        "Optimización de pujas, audiencias y segmentaciones.",
+        "Implementación de listas de remarketing.",
+        "Optimización dos veces por semana.",
+        "Pruebas A/B de anuncios.",
+        "Informe detallado mensual con métricas y oportunidades de mejora.",
+        "Reunión estratégica mensual (60 minutos).",
+        "Soporte prioritario por WhatsApp."
+      ],
+      "recommended_for_label": "Recomendado para:",
+      "recommended_for": [
+        "Empresas en crecimiento.",
+        "E-commerce.",
+        "Clínicas, constructoras y negocios con presupuestos publicitarios más altos."
+      ],
+      "cta": "Consultar precio de este plan"
+    }
+  },
+  "complementary_services": {
+    "badge": "Servicios Extra",
+    "title": "Servicios Complementarios",
+    "subtitle": "Soluciones adicionales para potenciar el alcance, la confianza y las oportunidades comerciales de tu marca.",
+    "social": {
+      "title": "Gestión de Redes Sociales",
+      "description": "Planes mensuales diseñados para empresas que buscan fortalecer su presencia digital mediante una estrategia de contenido, diseño, planificación y gestión enfocada en generar confianza, alcance y ventas."
+    },
+    "video": {
+      "title": "Producción de Video Profesional",
+      "description": "Creación de videos publicitarios y corporativos con grabación y edición profesional para campañas de Meta Ads, Google Ads, redes sociales y contenido de marca."
+    },
+    "b2b": {
+      "title": "Marketing B2B para Empresas",
+      "description": "Estrategias especializadas para empresas que venden a otras empresas (B2B), diseñando sistemas para generar oportunidades comerciales mediante Google Ads, Meta Ads y campañas enfocadas en la captación de leads de calidad vía email marketing.",
+      "targets_label": "Especializado en:",
+      "targets": [
+        "Empresas de software (SaaS).",
+        "Consultoras.",
+        "Empresas de tecnología.",
+        "Empresas de servicios.",
+        "Soluciones corporativas."
+      ]
+    },
+    "consulting": {
+      "title": "Consultoría de Marketing Digital",
+      "description": "Asesorías personalizadas para empresas que desean optimizar su estrategia digital, mejorar el rendimiento de sus campañas y aumentar sus resultados."
+    },
+    "custom_solution": {
+      "title": "¿Buscas una solución a medida?",
+      "description": "Contáctanos y prepararemos una propuesta personalizada de acuerdo con las necesidades y objetivos de tu empresa.",
+      "cta": "Contactar ahora"
     }
   },
   "faq": {
@@ -254,6 +356,38 @@
       "Análisis avanzado de datos",
       "Optimización del embudo de ventas"
     ]
+  },
+  "privacy_policy": {
+    "title": "Política de Privacidad",
+    "subtitle": "Información sobre cómo tratamos y protegemos tus datos personales en nuestros formularios y plataformas.",
+    "intro": "En Signal Marketing nos tomamos muy en serio la privacidad de tus datos. A continuación, detallamos el tratamiento que le damos a la información que nos compartes en nuestros formularios de contacto, calendario de reuniones y campañas publicitarias.",
+    "sections": [
+      {
+        "title": "1. Información que recopilamos",
+        "content": "A través de nuestros formularios y canales de contacto recopilamos la siguiente información: Nombre y apellido, Nombre de la empresa, Teléfono de contacto (con prefijo internacional), Descripción de tu empresa o proyecto, y enlace a tu página web y/o redes sociales."
+      },
+      {
+        "title": "2. Calendario de Reuniones (Calendly)",
+        "content": "Para facilitar la coordinación de asesorías y reuniones, integramos Calendly en nuestro sitio web. Al agendar una fecha y hora, los datos ingresados son gestionados de acuerdo con las políticas de privacidad de Calendly con el único fin de coordinar y agendar la llamada."
+      },
+      {
+        "title": "3. Finalidad del tratamiento de datos",
+        "content": "Utilizamos la información recopilada únicamente para: Ponernos en contacto contigo para responder a tus consultas, analizar la viabilidad de tus proyectos antes de nuestra reunión, preparar propuestas comerciales personalizadas y realizar el seguimiento de tu solicitud de servicio."
+      },
+      {
+        "title": "4. Cookies y Publicidad (Google Ads & Meta Ads)",
+        "content": "Este sitio web utiliza tecnologías de seguimiento y cookies de terceros (como Google Analytics, Google Ads y Meta Pixel) para medir el rendimiento de nuestras campañas publicitarias y entender cómo interactúan los usuarios con nuestra página. No compartimos información personal de contacto directa con estas redes."
+      },
+      {
+        "title": "5. Conservación y Seguridad de los Datos",
+        "content": "Tus datos personales no se venden, alquilan ni comparten con terceros para fines comerciales. Se almacenan de forma segura y confidencial en nuestros sistemas internos de gestión de clientes. Los conservaremos únicamente durante el tiempo necesario para cumplir con la relación comercial."
+      },
+      {
+        "title": "6. Tus Derechos",
+        "content": "En cualquier momento puedes solicitar el acceso, rectificación o eliminación de tus datos personales poniéndote en contacto con nosotros a través de cualquiera de nuestros canales de comunicación o respondiendo a nuestros correos electrónicos."
+      }
+    ],
+    "back_to_home": "Volver al inicio"
   },
   "whatsapp": {
     "tooltip": "¡Hablemos por WhatsApp!",
