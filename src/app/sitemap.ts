@@ -70,6 +70,32 @@ export default function sitemap(): MetadataRoute.Sitemap {
         },
       },
     },
+    {
+      url: `${baseUrl}/es/politica-de-privacidad`,
+      lastModified: now,
+      changeFrequency: 'monthly',
+      priority: 0.3,
+      alternates: {
+        languages: {
+          es: `${baseUrl}/es/politica-de-privacidad`,
+          en: `${baseUrl}/en/politica-de-privacidad`,
+          'x-default': `${baseUrl}/es/politica-de-privacidad`,
+        },
+      },
+    },
+    {
+      url: `${baseUrl}/en/politica-de-privacidad`,
+      lastModified: now,
+      changeFrequency: 'monthly',
+      priority: 0.3,
+      alternates: {
+        languages: {
+          es: `${baseUrl}/es/politica-de-privacidad`,
+          en: `${baseUrl}/en/politica-de-privacidad`,
+          'x-default': `${baseUrl}/es/politica-de-privacidad`,
+        },
+      },
+    },
   ];
 }
 

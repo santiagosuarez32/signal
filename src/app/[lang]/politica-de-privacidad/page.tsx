@@ -1,5 +1,30 @@
+import { Metadata } from "next";
 import { getDictionary } from "@/dictionaries";
 import Link from "next/link";
+
+export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
+  const { lang } = await params;
+  const dict = await getDictionary(lang);
+  const title = lang === "es" ? "Política de Privacidad | Signal Marketing" : "Privacy Policy | Signal Marketing";
+  const description = dict.privacy_policy?.subtitle || "Política de privacidad de Signal Marketing.";
+
+  return {
+    title,
+    description,
+    robots: {
+      index: true,
+      follow: true,
+    },
+    alternates: {
+      canonical: `/${lang}/politica-de-privacidad`,
+      languages: {
+        'es': '/es/politica-de-privacidad',
+        'en': '/en/politica-de-privacidad',
+        'x-default': '/es/politica-de-privacidad',
+      },
+    },
+  };
+}
 
 export default async function PrivacyPolicyPage({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
