@@ -10,14 +10,14 @@ export default function Footer() {
   const footerRef = useRef<HTMLElement>(null);
   const lineRef = useRef<HTMLDivElement>(null);
   const [country, setCountry] = useState("ar");
-  
+
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
-    
+
     if (footerRef.current) {
       const elements = footerRef.current.querySelectorAll('.footer-anim');
-      
-      gsap.fromTo(elements, 
+
+      gsap.fromTo(elements,
         { y: 60, opacity: 0 },
         {
           y: 0,
@@ -49,10 +49,10 @@ export default function Footer() {
 
   return (
     <footer id="contacto" ref={footerRef} className="bg-black w-full flex flex-col items-center justify-between min-h-[100vh] relative pt-16 lg:pt-24 pb-8 px-6 lg:px-20 xl:px-24 z-20 text-white border-t border-white/25">
-      
+
       {/* Main Content */}
       <div className="w-full max-w-[1400px] flex flex-col lg:flex-row justify-between items-start lg:items-center gap-12 lg:gap-16 mb-auto flex-grow pb-12">
-        
+
         {/* Left: Text & Form */}
         <div className="flex flex-col items-start gap-4 lg:w-[46%] w-full">
           <div className="footer-anim inline-block px-3 py-2 border border-white/40 rounded-[30px] text-white/90 text-[14px] font-light backdrop-blur-sm">
@@ -74,7 +74,7 @@ export default function Footer() {
             <PhoneCountrySelect country={country} setCountry={setCountry} />
             <textarea name="mensaje" placeholder={dict.footer.form.message} required minLength={10} rows={3} className="w-full bg-transparent border border-white/40 rounded-xl px-4 py-3 text-sm text-white placeholder:font-light placeholder:text-white/40 focus:outline-none focus:border-turquesa focus:ring-1 focus:ring-turquesa transition-all resize-none"></textarea>
             <input type="text" name="web" placeholder={dict.footer.form.web} className="w-full bg-transparent border border-white/40 rounded-xl px-4 py-3 text-sm text-white placeholder:font-light placeholder:text-white/40 focus:outline-none focus:border-turquesa focus:ring-1 focus:ring-turquesa transition-all" />
-            
+
             <button type="submit" className="bg-mystic-navy text-white font-light rounded-xl px-6 py-3 mt-2 hover:bg-white hover:text-black transition-all w-fit flex items-center gap-2 text-xs md:text-sm shadow-[0_0_25px_rgba(30,35,172,0.5)] hover:shadow-[0_0_35px_rgba(255,255,255,0.4)] hover:-translate-y-0.5 duration-300">
               {dict.footer.form.button}
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
@@ -105,7 +105,7 @@ export default function Footer() {
       </div>
 
       {/* Bottom Bar */}
-      <div className="w-full max-w-[1400px] flex flex-col md:flex-row justify-between items-center gap-6 text-sm font-light text-slate-400 footer-anim pt-8 pb-4">
+      <div className="w-full max-w-[1400px] flex flex-row flex-wrap justify-center sm:justify-between items-center gap-x-8 gap-y-4 text-xs sm:text-sm font-light text-slate-400 footer-anim pt-8 pb-4 text-center sm:text-left">
         <p>{dict.footer.copyright.charAt(0).toUpperCase() + dict.footer.copyright.slice(1).toLowerCase()} {new Date().getFullYear()}</p>
         <p>
           Desarrollado por{" "}
@@ -113,15 +113,14 @@ export default function Footer() {
             Codew
           </a>
         </p>
-        <div className="flex gap-10">
+        <div className="flex flex-wrap justify-center gap-x-6 gap-y-2 sm:gap-10">
           <a href={`/${lang}/politica-de-privacidad`} className="hover:text-turquesa transition-colors">
             {lang === "es" ? "Política de privacidad" : "Privacy Policy"}
           </a>
           <a href="https://www.instagram.com/signalmarketing_/" target="_blank" rel="noopener noreferrer" className="hover:text-turquesa transition-colors">Instagram</a>
-          <a href="https://www.linkedin.com/company/signalmkt" target="_blank" rel="noopener noreferrer" className="hover:text-turquesa transition-colors">LinkedIn</a>
         </div>
       </div>
-      
+
     </footer>
   );
 }

@@ -170,7 +170,7 @@ export default function Navbar() {
             <Link
               href={`/${lang}`}
               onClick={closeMenu}
-              className={`text-4xl sm:text-5xl font-sans font-bold tracking-tight transition-colors ${
+              className={`text-4xl sm:text-5xl font-sans font-light tracking-tight transition-colors ${
                 !isServicesPage ? "text-turquesa" : "text-white hover:text-turquesa"
               }`}
             >
@@ -182,7 +182,7 @@ export default function Navbar() {
             <Link
               href={`/${lang}/servicios`}
               onClick={closeMenu}
-              className={`text-4xl sm:text-5xl font-sans font-bold tracking-tight transition-colors ${
+              className={`text-4xl sm:text-5xl font-sans font-light tracking-tight transition-colors ${
                 isServicesPage ? "text-turquesa" : "text-white hover:text-turquesa"
               }`}
             >
@@ -194,7 +194,7 @@ export default function Navbar() {
             <a
               href="#contacto"
               onClick={closeMenu}
-              className="text-4xl sm:text-5xl font-sans font-bold tracking-tight text-white hover:text-turquesa transition-colors"
+              className="text-4xl sm:text-5xl font-sans font-light tracking-tight text-white hover:text-turquesa transition-colors"
             >
               {dict.nav?.contact || "Contacto"}
             </a>
@@ -207,8 +207,8 @@ export default function Navbar() {
               onClick={closeMenu}
               className={`text-xl sm:text-2xl font-sans transition-colors ${
                 lang === "es"
-                  ? "text-white font-bold border-b-2 border-turquesa pb-1"
-                  : "text-white/60 hover:text-white font-normal"
+                  ? "text-white font-light border-b border-turquesa pb-1"
+                  : "text-white/60 hover:text-white font-light"
               }`}
             >
               {dict.nav?.lang_es || "Español"}
@@ -218,8 +218,8 @@ export default function Navbar() {
               onClick={closeMenu}
               className={`text-xl sm:text-2xl font-sans transition-colors ${
                 lang === "en"
-                  ? "text-white font-bold border-b-2 border-turquesa pb-1"
-                  : "text-white/60 hover:text-white font-normal"
+                  ? "text-white font-light border-b border-turquesa pb-1"
+                  : "text-white/60 hover:text-white font-light"
               }`}
             >
               {dict.nav?.lang_en || "Inglés"}
