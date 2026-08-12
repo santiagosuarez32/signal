@@ -241,7 +241,7 @@ export default function Home() {
                   }}
                 >
                   {[...Array(4)].map((_, rep) => (
-                    <div key={rep} className="inline-flex items-center gap-6 md:gap-12 pr-6 md:pr-12">
+                    <div key={rep} className="inline-flex items-center gap-6 md:gap-12 pr-6 md:pr-12 shrink-0">
                       <img src="/marquee/1.png" alt="Brand 1" className="h-16 w-16 md:h-28 md:w-28 object-contain shrink-0 filter grayscale brightness-125 opacity-80 hover:opacity-100 hover:grayscale-0 transition-all duration-300" />
                       <img src="/marquee/2.png" alt="Brand 2" className="h-16 w-16 md:h-28 md:w-28 object-contain shrink-0 filter grayscale brightness-125 opacity-80 hover:opacity-100 hover:grayscale-0 transition-all duration-300" />
                       <img src="/marquee/3.png" alt="Brand 3" className="h-16 w-16 md:h-28 md:w-28 object-contain shrink-0 filter grayscale brightness-125 opacity-80 hover:opacity-100 hover:grayscale-0 transition-all duration-300" />

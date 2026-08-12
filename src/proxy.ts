@@ -19,11 +19,12 @@ export default function proxy(request: NextRequest) {
   // Check if there is any supported locale in the pathname
   const { pathname } = request.nextUrl;
   
-  // Ignore static files, images, etc.
+  // Ignore static files, images, APIs, etc.
   if (
     pathname.startsWith('/_next') ||
     pathname.startsWith('/logo') ||
     pathname.startsWith('/marquee') ||
+    pathname.startsWith('/api') ||
     pathname.includes('.')
   ) {
     return;

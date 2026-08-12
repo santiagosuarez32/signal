@@ -187,8 +187,8 @@
       ]
     },
     "consulting": {
-      "title": "Digital Marketing Consulting",
-      "description": "Personalized advisory services for companies wishing to optimize their digital strategy, improve campaign performance, and maximize results."
+      "title": "Websites & Consulting",
+      "description": "Design and creation of high-performance websites and landing pages focused on conversion, combined with personalized consulting to optimize your strategy and boost your results."
     },
     "custom_solution": {
       "title": "Looking for a custom solution?",
@@ -237,6 +237,7 @@
     "form": {
       "name": "Full Name",
       "company": "Company Name",
+      "email": "Email address",
       "phone": "Phone Number",
       "message": "What is your company about?",
       "web": "Website and social media (optional)",

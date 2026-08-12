@@ -187,8 +187,8 @@
       ]
     },
     "consulting": {
-      "title": "Consultoría de Marketing Digital",
-      "description": "Asesorías personalizadas para empresas que desean optimizar su estrategia digital, mejorar el rendimiento de sus campañas y aumentar sus resultados."
+      "title": "Páginas Web y Consultoría",
+      "description": "Diseño y creación de landing pages y sitios web de alto rendimiento enfocados en conversión, combinados con asesorías personalizadas para optimizar tu estrategia y aumentar tus resultados."
     },
     "custom_solution": {
       "title": "¿Buscas una solución a medida?",
@@ -237,6 +237,7 @@
     "form": {
       "name": "Nombre y apellido",
       "company": "Nombre de la empresa",
+      "email": "Correo electrónico",
       "phone": "Número de teléfono",
       "message": "¿De qué se trata tu empresa?",
       "web": "Página web y redes sociales (opcional)",
